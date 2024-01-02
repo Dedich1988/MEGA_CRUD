@@ -54,7 +54,7 @@
             <div class="main-header">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light p-0">
-                        <a class="navbar-brand pt-0" href="index.html"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt="" class="img-fluid diverge-logo" /></a>
+                        <a class="navbar-brand pt-0" href="{% url 'webapp:home' %}"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt="" class="img-fluid diverge-logo" /></a>
                             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -64,11 +64,11 @@
                             </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav">
-                                        <li class="nav-item active">
-                                            <a class="nav-link text-decoration-none navbar-text-color home-margin-top" href="index.html">Home<span class="sr-only">(current)</span></a>
+                                        <li {% if request.resolver_match.url_name == 'home' %} class="nav-item active" {% endif %}>
+                                            <a class="nav-link text-decoration-none navbar-text-color home-margin " href="{% url 'webapp:home' %}">Home<span class="sr-only">(current)</span></a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-decoration-none navbar-text-color" href="about.html">About</a>
+                                        <li {% if request.resolver_match.url_name == 'about' %}  class="nav-item active" {% endif %}>
+                                            <a class="nav-link text-decoration-none navbar-text-color" href="{% url 'webapp:about' %}">About</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link text-decoration-none navbar-text-color" href="services.html">Services</a>
