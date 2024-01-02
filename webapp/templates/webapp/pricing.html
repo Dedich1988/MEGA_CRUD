@@ -6,32 +6,32 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing plan | RedLight</title>
-<link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png"> 
-<link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="57x57" href="{% static 'webapp/assets/images/favicons/apple-icon-57x57.png' %}">
+<link rel="apple-touch-icon" sizes="60x60" href="{% static 'webapp/assets/images/favicons/apple-icon-60x60.png' %}">
+<link rel="apple-touch-icon" sizes="72x72" href="{% static 'webapp/assets/images/favicons/apple-icon-72x72.png' %}">
+<link rel="apple-touch-icon" sizes="76x76" href="{% static 'webapp/assets/images/favicons/apple-icon-76x76.png' %}">
+<link rel="apple-touch-icon" sizes="114x114" href="{% static 'webapp/assets/images/favicons/apple-icon-114x114.png' %}">
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'webapp/assets/images/favicons/apple-icon-120x120.png' %}">
+<link rel="apple-touch-icon" sizes="144x144" href="{% static 'webapp/assets/images/favicons/apple-icon-144x144.png' %}">
+<link rel="apple-touch-icon" sizes="152x152" href="{% static 'webapp/assets/images/favicons/apple-icon-152x152.png' %}">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'webapp/assets/images/favicons/apple-icon-180x180.png' %}">
+<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'webapp/assets/images/favicons/android-icon-192x192.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'webapp/assets/images/favicons/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="96x96" href="{% static 'webapp/assets/images/favicons/favicon-96x96.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'webapp/assets/images/favicons/favicon-16x16.png' %}">
 <link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png' %}">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="./assets/css/style.css"/>
-<link rel="stylesheet" href="./assets/css/mobile.css"/>
+<link rel="stylesheet" href="{% static 'webapp/assets/css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" href="./assets/css/style.css' %}"/>
+<link rel="stylesheet" href="./assets/css/mobile.css' %}"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' %}"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css' %}"/>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 
@@ -42,7 +42,7 @@
             <div class="main-header">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light p-0">
-                        <a class="navbar-brand pt-0" href="index.html"><img src="./assets/images/redlight-logo.png" alt="" class="img-fluid diverge-logo" /></a>
+                        <a class="navbar-brand pt-0" href="index.html"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt="" class="img-fluid diverge-logo" /></a>
                             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -125,7 +125,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="about-us-content" data-aos="fade-up">
                         <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="./assets/images/pricing-plan-icon1.png" alt="">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon1.png' %}" alt="">
                             </figure>
                         </div>
                         <h4 class="pricing-plan-h4">Beginner</h4>
@@ -144,7 +144,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="about-us-content" data-aos="fade-up">
                         <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img src="./assets/images/pricing-plan-icon2.png" alt="">
+                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/pricing-plan-icon2.png' %}" alt="">
                             </figure>
                         </div>
                         <h4 class="pricing-plan-h4">Business</h4>
@@ -163,7 +163,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="about-us-content" data-aos="fade-up">
                         <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="./assets/images/pricing-plan-icon3.png" alt="">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon3.png' %}" alt="">
                             </figure>
                         </div>
                         <h4 class="pricing-plan-h4">Exclusive</h4>
@@ -193,39 +193,39 @@
             <div class="row">
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
-                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img src="./assets/images/companies-icon1.png"
+                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img src="{% static 'webapp/assets/images/companies-icon1.png' %}"
                                 alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
-                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img src="./assets/images/companies-icon2.png"
+                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img src="{% static 'webapp/assets/images/companies-icon2.png' %}"
                                 alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0  mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
-                        <figure class="mb-0 comapanies-icon-margin-hype icons-mb"><img src="./assets/images/companies-icon3.png"
+                        <figure class="mb-0 comapanies-icon-margin-hype icons-mb"><img src="{% static 'webapp/assets/images/companies-icon3.png' %}"
                                 alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
-                        <figure class="mb-0 comapanies-icon-margin-3"><img src="./assets/images/companies-icon4.png"
+                        <figure class="mb-0 comapanies-icon-margin-3"><img src="{% static 'webapp/assets/images/companies-icon4.png' %}"
                                 alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
                         <figure class="mb-0 comapanies-icon-margin-3"><img
-                                src="./assets/images/companies-icon5.png" alt="">
+                                src="{% static 'webapp/assets/images/companies-icon5.png' %}" alt="">
                         </figure>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
                     <div class="logo-box" data-aos="fade-up">
                         <figure class="mb-0 mt-0 comapanies-icon-margin-3 companies-icon6"><img
-                                src="./assets/images/companies-icon6.png" alt="">
+                                src="{% static 'webapp/assets/images/companies-icon6.png' %}" alt="">
                         </figure>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="faq-content-img">
-                    <figure class="mb-0"><img src="./assets/images/accordian-left-img.png" alt="" class="">
+                    <figure class="mb-0"><img src="{% static 'webapp/assets/images/accordian-left-img.png' %}" alt="" class="">
                     </figure>
                 </div>
             </div>
@@ -378,7 +378,7 @@
     
     <div class="footer-section">
         <div class="about-right-icon">
-            <figure class="footer-icon"><img src="./assets/images/footer-left.png" alt="" class="img-fluid">
+            <figure class="footer-icon"><img src="{% static 'webapp/assets/images/footer-left.png' %}" alt="" class="img-fluid">
             </figure>
         </div>
         <div class="footer-outer-margin" data-aos="fade-up">
@@ -387,7 +387,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="footer-content1" data-aos="flip-left">
                             <figure>
-                                <a href="index.html"><img src="./assets/images/redlight-logo.png" alt="" class="img-fluid" /></a>
+                                <a href="index.html"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt="" class="img-fluid" /></a>
                             </figure>
                             <p class="red-light-footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do
                                 eiusmod tempororem ipsum dolor sit am econsect ametconsectetetur adipiscing.</p>
@@ -550,14 +550,14 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/custom-script.js"></script>
-    <script src="assets/js/owl.carousel.js"></script>
+    <script src="{% static 'webapp/assets/js/animations.js"></script>
+    <script src="{% static 'webapp/assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'webapp/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'webapp/assets/js/popper.min.js"></script>
+    <script src="{% static 'webapp/assets/js/custom-script.js"></script>
+    <script src="{% static 'webapp/assets/js/owl.carousel.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/text-animations.js"></script>
+    <script src="{% static 'webapp/assets/js/text-animations.js"></script>
 
 </body>
 
