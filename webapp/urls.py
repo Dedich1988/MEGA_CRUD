@@ -13,6 +13,7 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('team/', team, name='team'),
     path('testimonials/', testimonials, name='testimonials'),
+    path('subscribe/', subscribe, name='subscribe'),
 ]
 
 
