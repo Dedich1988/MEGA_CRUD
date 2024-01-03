@@ -9,6 +9,10 @@ app_name = 'webapp'
 urlpatterns = [
     path('', index, name='home'),
     path('about/', about, name='about'),
+    path('services/', services, name='services'),
+    path('faq/', faq, name='faq'),
+    path('team/', team, name='team'),
+    path('testimonials/', testimonials, name='testimonials'),
 ]
 
 
