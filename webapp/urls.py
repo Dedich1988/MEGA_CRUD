@@ -13,6 +13,13 @@ urlpatterns = [
     path('faq/', faq, name='faq'),
     path('team/', team, name='team'),
     path('testimonials/', testimonials, name='testimonials'),
+
+    path('infinite_scroll/', infinite_scroll, name='infinite_scroll'),
+    path('single_post/', single_post, name='single_post'),
+
+
+    path('pricing/', pricing, name='pricing'),
+
     path('subscribe/', subscribe, name='subscribe'),
 ]
 

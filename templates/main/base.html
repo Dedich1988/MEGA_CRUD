@@ -105,23 +105,45 @@
 {#                                                    </ul>#}
 {#                                                 </div>#}
 {#                                        </li>#}
-                                        <li class="nav-item dropdown redlight-dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>
-                                                <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">
-                                                    <ul class="list-unstyled">
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="single-post.html">Single Post</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="infinite-scroll.html">Infinite Scroll</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="load-more.html">Load More</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="one-column.html">One Column</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="two-column.html">Two Column</a></li>
-                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="three-column.html">Three Column</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="three-colum-sidbar.html">Three Column Slider</a></li>
-                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="four-column.html">Four Column</a></li>
-                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="six-colum-full-wide.html">Six Column</a></li>
-                                                     </ul>
-                                                </div>
+{#                                        <li class="nav-item dropdown redlight-dropdown">#}
+{#                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>#}
+{#                                                <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">#}
+{#                                                    <ul class="list-unstyled">#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="single-post.html">Single Post</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="infinite-scroll.html">Infinite Scroll</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="load-more.html">Load More</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="one-column.html">One Column</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="two-column.html">Two Column</a></li>#}
+{#                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="three-column.html">Three Column</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="three-colum-sidbar.html">Three Column Slider</a></li>#}
+{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="four-column.html">Four Column</a></li>#}
+{#                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="six-colum-full-wide.html">Six Column</a></li>#}
+{#                                                     </ul>#}
+{#                                                </div>#}
+{#                                        </li>#}
+                                        <li class="nav-item dropdown redlight-dropdown {% if request.resolver_match.url_name in blog_urls %}active{% endif %}">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
+                                               role="button" data-toggle="dropdown" aria-haspopup="true"
+                                               aria-expanded="false">Blogs</a>
+                                            <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a
+                                                            class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'single_post' %}active{% endif %}"
+                                                            href="{% url 'webapp:single_post' %}">Single Post</a></li>
+                                                    <li class="nav-item"><a
+                                                            class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'infinite_scroll' %}active{% endif %}"
+                                                            href="{% url 'webapp:infinite_scroll' %}">Infinite
+                                                        Scroll</a></li>
+                                                    <!-- Добавьте остальные пункты меню здесь, следуя тому же шаблону -->
+                                                </ul>
+                                            </div>
                                         </li>
-                                        <li class="nav-item navbar-text-color"><a class="nav-link text-decoration-none contact-us-margin navbar-text-color" href="pricing.html">Pricing</a></li>
+
+                                        <li class="nav-item navbar-text-color {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}">
+                                            <a class="nav-link text-decoration-none contact-us-margin navbar-text-color"
+                                               href="{% url 'webapp:pricing' %}">Pricing</a>
+                                        </li>
+
                                     </ul>
                                     <div class="btn-talk ml-auto">
                                         <ul class="m-0 p-0">

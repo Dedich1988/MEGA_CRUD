@@ -72,3 +72,16 @@ def testimonials(request):
     TODO: Add logic for testimonials page processing.
     """
     return render(request, 'webapp/testimonial.html')
+
+def pricing(request):
+    """
+    Renders the pricing page.
+    TODO: Add logic for testimonials page processing.
+    """
+    return render(request, 'webapp/pricing.html')
+
+def single_post(request):
+    return render(request, 'webapp/single-post.html')
+
+def infinite_scroll(request):
+    return render(request, 'webapp/infinite-scroll.html')
