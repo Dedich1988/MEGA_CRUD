@@ -3,7 +3,8 @@ from django.conf import settings
 from .forms import SubscribeForm
 from django.core.mail import send_mail
 from django.db import IntegrityError  # Импорт для обработки исключений
-from .models import Subscriber
+from .models import *
+
 
 def send_confirmation_email(email):
     # Функция для отправки подтверждающего письма
@@ -78,7 +79,9 @@ def pricing(request):
     Renders the pricing page.
     TODO: Add logic for testimonials page processing.
     """
-    return render(request, 'webapp/pricing.html')
+    plans = PricingPlan.objects.all()
+    return render(request, 'webapp/pricing.html', {'plans': plans})
+
 
 def single_post(request):
     return render(request, 'webapp/single-post.html')

@@ -21,6 +21,7 @@ urlpatterns = [
     path('pricing/', pricing, name='pricing'),
 
     path('subscribe/', subscribe, name='subscribe'),
+
 ]
 
 

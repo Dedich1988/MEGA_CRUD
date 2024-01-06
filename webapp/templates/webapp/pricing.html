@@ -5,68 +5,27 @@
 
       <!--PRICING-PLAN_SECTION -->
     <section class="about-us-section-start pricing-plan-section pricing-page overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon1.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Beginner</h4>
-                        <h3 class="pricing-plan-color">Free <span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">30 Days Product Testing
-                            Upgrade Anytime Protection
-                            500 Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 12 Hrs
-                            Configure Software One-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
+    <div class="container">
+        <div class="row">
+            {% for plan in plans %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="about-us-content" data-aos="fade-up">
+                    <div class="icons-rounded-box">
+                        <figure class="mb-0"><img src="{{ plan.image.url }}" alt="{{ plan.title }}">
+                        </figure>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/pricing-plan-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Business</h4>
-                        <h3 class="pricing-plan-color">$39.99<span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">40 Days Product Testing
-                            Upgrade Anytime Protection
-                            1000 Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 13 Hrs
-                            Configure Software One-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon3.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Exclusive</h4>
-                        <h3 class="pricing-plan-color">$47.85 <span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">50 Days Product Testing
-                            Upgrade Anytime Protection
-                            Unlimited Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 14 Hrs
-                            Configure Software Life-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
+                    <h4 class="pricing-plan-h4">{{ plan.title }}</h4>
+                    <h3 class="pricing-plan-color">${{ plan.price }}<span class="pricing-free-text">{{ plan.price_description }}</span></h3>
+                    <p class="pricing-content">{{ plan.description }}</p>
+                    <div class="order-now-btn">
+                        <a href="pricing.html" class="text-decoration-none ">Order Now</a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
      <!-- ICONS_SECTION -->
      <section class="icons-section icons-section-services overflow-hidden">
         <div class="container">
