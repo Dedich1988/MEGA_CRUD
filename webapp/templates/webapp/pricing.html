@@ -16,7 +16,7 @@
                     </div>
                     <h4 class="pricing-plan-h4">{{ plan.title }}</h4>
                     <h3 class="pricing-plan-color">${{ plan.price }}<span class="pricing-free-text">{{ plan.price_description }}</span></h3>
-                    <p class="pricing-plan-color-p">{{ plan.description|safe }}<span class="pricing-free-text">{{ plan.price_description }}</span></p>
+                    <p class="pricing-plan-color-p">{{ plan.description|truncatechars:125|safe }}</p>
                     <div class="order-now-btn">
                         <a href="pricing.html" class="text-decoration-none ">Order Now</a>
                     </div>
@@ -26,6 +26,7 @@
         </div>
     </div>
 </section>
+
 
      <!-- ICONS_SECTION -->
      <section class="icons-section icons-section-services overflow-hidden">
