@@ -1069,7 +1069,10 @@ letter-spacing: 0;
 .pricing-plan-section{
   padding: 0;
 }
-.pricing-plan-section .pricing-plan-color{
+.pricing-plan-section .pricing-plan-color {
+  color: var(--e-global-color-btn-red);
+}
+.pricing-plan-section .pricing-plan-color-p{
   color: var(--e-global-color-btn-red);
 }
 .pricing-plan-section .pricing-free-text{
