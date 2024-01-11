@@ -65,18 +65,18 @@
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav">
                                         <li {% if request.resolver_match.url_name == 'home' %} class="nav-item active" {% endif %}>
-                                            <a class="nav-link text-decoration-none navbar-text-color home-margin " href="{% url 'webapp:home' %}">Home<span class="sr-only">(current)</span></a>
+                                            <a class="nav-link text-decoration-none navbar-text-color home-margin " href="{% url 'webapp:home' %}">Главная<span class="sr-only">(current)</span></a>
                                         </li>
                                         <li {% if request.resolver_match.url_name == 'about' %}  class="nav-item active" {% endif %}>
-                                            <a class="nav-link text-decoration-none navbar-text-color" href="{% url 'webapp:about' %}">About</a>
+                                            <a class="nav-link text-decoration-none navbar-text-color" href="{% url 'webapp:about' %}">Портфолио</a>
                                         </li>
                                         <li {% if request.resolver_match.url_name == 'services' %}  class="nav-item active" {% endif %}>
-                                            <a class="nav-link text-decoration-none navbar-text-color" href="{% url 'webapp:services' %}">Services</a>
+                                            <a class="nav-link text-decoration-none navbar-text-color" href="{% url 'webapp:services' %}">IT-Старт</a>
 
                                         <li class="nav-item dropdown redlight-dropdown {% if request.resolver_match.url_name in "['faq', 'team', 'testimonials']" %}active{% endif %}">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                               aria-expanded="false">Pages</a>
+                                               aria-expanded="false">Услуги</a>
                                             <div class="dropdown-menu dropdown-content-redlight">
                                                 <ul class="list-unstyled">
                                                     <li class="nav-item"><a
@@ -92,35 +92,6 @@
                                             </div>
                                         </li>
 
-
-
-{#                                        </li>#}
-{#                                        <li {% if request.resolver_match.url_name in "['pages', 'faq']" %} class="nav-item active dropdown redlight-dropdown" {% else %} class="dropdown redlight-dropdown" {% endif %}>#}
-{#                                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{% url 'webapp:pages' %}">Pages</a>#}
-{#                                                <div class="dropdown-menu dropdown-content-redlight">#}
-{#                                                    <ul class="list-unstyled">#}
-{#                                                        <li {% if request.resolver_match.url_name == 'faq' %} class="nav-item active" {% endif %}> <a class="dropdown-item nav-link" href="{% url 'webapp:faq' %}">FAQs</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item nav-link" href="teams.html">Team</a></li>#}
-{#                                                        <li {% if request.resolver_match.url_name == 'pages' %} class="nav-item active" {% endif %}> <a class="dropdown-item nav-link" href="{% url 'webapp:pages' %}">Testimonials</a></li>#}
-{#                                                    </ul>#}
-{#                                                 </div>#}
-{#                                        </li>#}
-{#                                        <li class="nav-item dropdown redlight-dropdown">#}
-{#                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>#}
-{#                                                <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">#}
-{#                                                    <ul class="list-unstyled">#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="single-post.html">Single Post</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="infinite-scroll.html">Infinite Scroll</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="load-more.html">Load More</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="one-column.html">One Column</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="two-column.html">Two Column</a></li>#}
-{#                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="three-column.html">Three Column</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="three-colum-sidbar.html">Three Column Slider</a></li>#}
-{#                                                        <li class="nav-item"> <a class="dropdown-item fierce-menu nav-link" href="four-column.html">Four Column</a></li>#}
-{#                                                        <li class="nav-item"><a class="dropdown-item fierce-menu nav-link"  href="six-colum-full-wide.html">Six Column</a></li>#}
-{#                                                     </ul>#}
-{#                                                </div>#}
-{#                                        </li>#}
                                         <li class="nav-item dropdown redlight-dropdown {% if request.resolver_match.url_name in blog_urls %}active{% endif %}">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
                                                role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -141,13 +112,13 @@
 
                                         <li class="nav-item navbar-text-color {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}">
                                             <a class="nav-link text-decoration-none contact-us-margin navbar-text-color"
-                                               href="{% url 'webapp:pricing' %}">Pricing</a>
+                                               href="{% url 'webapp:pricing' %}">Контакты</a>
                                         </li>
 
                                     </ul>
                                     <div class="btn-talk ml-auto">
                                         <ul class="m-0 p-0">
-                                            <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact" href="contact.html">Contact Us</a></li>
+                                            <li class="list-unstyled d-lg-inline-block"><a class="nav-link contact" href="contact.html">Контакты</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,9 +127,12 @@
             </div>
         </header>
         <!-- BANNER-SECTION -->
+    <div class="home-banner-section overflow-hidden">
         {% include 'main/banner.html' %}
     </div>
+
   {% block content %}{% endblock %}
+
 <!-- Form-Section -->
 <section class="blogs-section-starts form-section-starts overflow-hidden">
     <div class="container">

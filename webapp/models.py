@@ -19,3 +19,13 @@ class PricingPlan(models.Model):
     def __str__(self):
         return self.title
 # Create your models here.
+
+
+class Banner(models.Model):
+    title = models.CharField(max_length=100)
+    description = RichTextField()
+    description_two = RichTextField()
+    image = models.ImageField(upload_to='banner/')
+
+    def __str__(self):
+        return self.title

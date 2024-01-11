@@ -14,6 +14,7 @@ def send_confirmation_email(email):
     recipient_list = [email, ]
     send_mail(subject, message, email_from, recipient_list)
 
+
 def subscribe(request):
     # Обработка запроса на подписку
     if request.method == 'POST':
@@ -33,7 +34,7 @@ def subscribe(request):
     else:
         form = SubscribeForm()
 
-    return render(request, 'base.html', {'form': form})
+    return render(request, 'main/base.html', {'form': form})
 
 
 def index(request):
@@ -88,3 +89,4 @@ def single_post(request):
 
 def infinite_scroll(request):
     return render(request, 'webapp/infinite-scroll.html')
+

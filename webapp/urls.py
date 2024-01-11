@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('subscribe/', subscribe, name='subscribe'),
 
+
+
 ]
 
 
