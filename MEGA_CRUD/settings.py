@@ -80,6 +80,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'webapp.context_processors.banner_context',
+                'webapp.context_processors.PricingPlan_context',
 
             ],
         },

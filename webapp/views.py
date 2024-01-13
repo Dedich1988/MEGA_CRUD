@@ -41,6 +41,7 @@ def index(request):
     """
     Renders the index page.
     """
+
     return render(request, 'webapp/index.html')
 
 def about(request):
@@ -80,8 +81,7 @@ def pricing(request):
     Renders the pricing page.
     TODO: Add logic for testimonials page processing.
     """
-    plans = PricingPlan.objects.all()
-    return render(request, 'webapp/pricing.html', {'plans': plans})
+    return render(request, 'webapp/pricing.html')
 
 
 def single_post(request):
