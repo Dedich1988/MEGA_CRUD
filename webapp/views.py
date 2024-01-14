@@ -41,8 +41,9 @@ def index(request):
     """
     Renders the index page.
     """
+    site = Portfolio.objects.all()
 
-    return render(request, 'webapp/index.html')
+    return render(request, 'webapp/index.html', {'site': site})
 
 def about(request):
     """

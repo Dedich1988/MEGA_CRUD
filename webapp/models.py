@@ -34,6 +34,7 @@ class Banner(models.Model):
 class Portfolio(models.Model):
     image = models.ImageField(upload_to='portfolio_images/')
     alt_text = models.CharField(max_length=255, blank=True)
+    link = models.URLField(default='https://github.com/Dedich1988')  # Добавление поля link
 
     def __str__(self):
         return self.alt_text or "Portfolio Item"

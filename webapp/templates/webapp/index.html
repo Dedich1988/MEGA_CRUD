@@ -3,60 +3,29 @@
 
 {% block content %}
 
-    <!-- ICONS_SECTION -->
-    <section class="icons-section overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="text-center p-0" data-aos="fade-zoom-in">Портфолио</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img
-                                src="{% static 'webapp/assets/images/companies-icon1.png' %}" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 comapanies-icon-margin icons-mb"><img
-                                src="{% static 'webapp/assets/images/companies-icon2.png' %}" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0  mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 comapanies-icon-margin-hype icons-mb"><img
-                                src="{% static 'webapp/assets/images/companies-icon3.png' %}" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 comapanies-icon-margin-3"><img
-                                src="{% static 'webapp/assets/images/companies-icon4.png' %}" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 comapanies-icon-margin-3"><img
-                                src="{% static 'webapp/assets/images/companies-icon5.png' %}" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4 col-6 mb-md-0 mb-4 text-center d-table align-items-center">
-                    <div class="logo-box" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                         data-aos-duration="2000">
-                        <figure class="mb-0 mt-0 comapanies-icon-margin-3 companies-icon6"><img
-                                src="{% static 'webapp/assets/images/companies-icon6.png' %}" alt=""></figure>
-                    </div>
-                </div>
+    <!-- MINI_pricing_SECTION -->
+<section class="icons-section overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-center p-0" data-aos="fade-zoom-in">Портфолио</h4>
             </div>
         </div>
-    </section>
+        <div class="row">
+            {% for item in site %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="portfolio-item">
+                    <a href="{{ item.link }}" target="_blank">
+                        <img src="{{ item.image.url }}" alt="{{ item.alt_text }}" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
 
     <!-- ABOUT-US_SECTION -->
     <section class="about-us-section-start">
