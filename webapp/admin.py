@@ -18,3 +18,6 @@ admin.site.register(Portfolio, MyModelAdmin)
 
 # Регистрация модели Portfolio с использованием MyModelAdmin
 admin.site.register(Banner, MyModelAdmin)
+
+# Регистрация модели Developer с использованием MyModelAdmin
+admin.site.register(Developer, MyModelAdmin)

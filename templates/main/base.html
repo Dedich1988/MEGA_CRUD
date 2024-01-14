@@ -80,14 +80,24 @@
                                             <div class="dropdown-menu dropdown-content-redlight">
                                                 <ul class="list-unstyled">
                                                     <li class="nav-item"><a
+                                                            class="dropdown-item nav-link {% if request.resolver_match.url_name == 'web_beck' %}active{% endif %}"
+                                                            href="{% url 'webapp:web_beck' %}">Веб-разработка и
+                                                        Backend-Решения</a></li>
+                                                    <li class="nav-item"><a
+                                                            class="dropdown-item nav-link {% if request.resolver_match.url_name == 'bot' %}active{% endif %}"
+                                                            href="{% url 'webapp:bot' %}">Разработка и Интеграция
+                                                        Ботов</a></li>
+
+                                                    <li class="nav-item"><a
+                                                            class="dropdown-item nav-link {% if request.resolver_match.url_name == 'pars' %}active{% endif %}"
+                                                            href="{% url 'webapp:pars' %}">Парсинг Данных</a></li>
+                                                    <li class="nav-item"><a
                                                             class="dropdown-item nav-link {% if request.resolver_match.url_name == 'faq' %}active{% endif %}"
                                                             href="{% url 'webapp:faq' %}">FAQs</a></li>
                                                     <li class="nav-item"><a
                                                             class="dropdown-item nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
-                                                            href="{% url 'webapp:team' %}">Team</a></li>
-                                                    <li class="nav-item"><a
-                                                            class="dropdown-item nav-link {% if request.resolver_match.url_name == 'testimonials' %}active{% endif %}"
-                                                            href="{% url 'webapp:testimonials' %}">Testimonials</a></li>
+                                                            href="{% url 'webapp:team' %}">Наша команда</a></li>
+
                                                 </ul>
                                             </div>
                                         </li>

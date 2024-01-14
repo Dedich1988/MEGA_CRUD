@@ -42,8 +42,8 @@ def index(request):
     Renders the index page.
     """
     site = Portfolio.objects.all()
-
-    return render(request, 'webapp/index.html', {'site': site})
+    developers = Developer.objects.all()
+    return render(request, 'webapp/index.html', {'site': site, 'developers': developers})
 
 def about(request):
     """
@@ -70,7 +70,21 @@ def team(request):
     """
     return render(request, 'webapp/teams.html')
 
-def testimonials(request):
+def pars(request):
+    """
+    Renders the testimonials page.
+    TODO: Add logic for testimonials page processing.
+    """
+    return render(request, 'webapp/testimonial.html')
+
+def bot(request):
+    """
+    Renders the testimonials page.
+    TODO: Add logic for testimonials page processing.
+    """
+    return render(request, 'webapp/testimonial.html')
+
+def web_beck(request):
     """
     Renders the testimonials page.
     TODO: Add logic for testimonials page processing.

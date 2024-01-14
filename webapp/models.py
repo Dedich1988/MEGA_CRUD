@@ -38,3 +38,17 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return self.alt_text or "Portfolio Item"
+
+
+# Портфолио мини на главную
+class Developer(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    bio = RichTextField()
+    image = models.ImageField(upload_to='developers/')
+    facebook_url = models.URLField(blank=True)
+    telegram_url = models.URLField(blank=True)
+    linkedin_url = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.name

@@ -501,7 +501,9 @@ a {
 }
 .dropdown-item:hover {
   text-decoration: none;
-  background-color:transparent;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 270px;
 }
 .dropdown-content-redlight ul li{
   margin-left: 0 !important;
@@ -511,10 +513,12 @@ a {
   width: 100%;
 }
 .dropdown-item.active, .dropdown-item:active {
-  color:var(--e-global-color-white-banner-text) !important;
+  color: var(--e-global-color-white-banner-text) !important;
   background: var(--e-global-color-red) !important;
   text-decoration: none;
-  background-color:transparent;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 270px;
 }
 
 .artificial-text {
@@ -535,7 +539,9 @@ a {
   border-radius: 0;
   padding-top: 0;
   padding-bottom: 0;
+  min-width: 270px;
 }
+
 
 .dropdown-menu a {
   color: var(--e-global-color-accent) !important;
