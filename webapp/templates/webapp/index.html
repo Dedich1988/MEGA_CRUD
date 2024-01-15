@@ -8,7 +8,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h4 class="text-center p-0" data-aos="fade-zoom-in">Портфолио</h4>
+
+                <h3 class="text-center mt-3 mb-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom">Портфолио</h3>
+
             </div>
         </div>
         <div class="row">
@@ -45,6 +47,7 @@
                         </p>
                 </div>
             </div>
+
             <!--PRICING-PLAN_SECTION -->
             <section class="about-us-section-start pricing-plan-section pricing-page overflow-hidden">
         <div class="container">
@@ -132,7 +135,7 @@
                             </div>
                             <h4 class="about-team-members-h4">{{ developer.name }}</h4>
                             <p class="about-team-title">{{ developer.title }}</p>
-                            <p class="teams-section-p">{{ developer.bio }}</p>
+                            <p class="teams-section-p">{{ developer.bio|safe }}</p>
                             <div class="social-icons teams-social-icons">
                                 <ul class="list-unstyled">
                                     {% if developer.facebook_url %}
@@ -557,99 +560,56 @@
         </div>
     </section>
     <!-- ABOUT-TEAM-SECTION -->
-    <section class="about-us-section-start about-teams-section overflow-hidden">
-        <div class="about-right-icon position-relative" data-aos="fade-up-right">
-            <figure class="whyus-icon"><img src="{% static 'webapp/assets/images/about-us-section-right-icon.png' %}" alt=""
-                    class="img-fluid">
-            </figure>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="text-center" data-aos="fade-up">Our Professional Team</h3>
-                    <p class="text-center" data-aos="fade-up-left">Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo
-                        ligula eget dolorenean massa.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-teams-inner" data-aos="fade-up">
-                        <div class="about-team">
-                            <div class="icons-rounded-box">
-                                <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-team-img1.png' %}" alt=""
-                                        class="img-fluid teams-img-border">
-                                </figure>
-                            </div>
-                        </div>
-                        <h4 class="about-team-members-h4">Eric T. Parker</h4>
-                        <p class="about-team-title">Network Security</p>
-                        <p class="teams-section-p">Lonec pede justo, fringilla vel, aliquet nec vulputate eget arcu.
-                        </p>
-                        <div class="social-icons teams-social-icons">
-                            <ul class="list-unstyled">
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-facebook  social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-twitter social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-linkedin social-networks"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-teams-inner" data-aos="fade-up">
-                        <div class="about-team">
-                            <div class="icons-rounded-box">
-                                <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-team-img2.png' %}" alt=""
-                                        class="img-fluid teams-img-border">
-                                </figure>
-                            </div>
-                        </div>
-                        <h4 class="about-team-members-h4">Shira Rubinoff</h4>
-                        <p class="about-team-title">Security Executive</p>
-                        <p class="teams-section-p">Donec pede justo, fringilla vel, aliquet nec vulputate eget arcu.</p>
+<section class="about-us-section-start about-teams-section about-page-teams">
+    <div class="container">
+        <!-- Добавленный заголовок и описание -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center" data-aos="fade-up">Наша Профессиональная Команда</h3>
+                <p class="text-center" data-aos="fade-up-left">Собрались лучшие умы в IT, чтобы создавать инновации и
+                    решать сложнейшие задачи. Наша команда - это синергия опыта, таланта и страсти к технологиям.</p>
 
-                        <div class="social-icons teams-social-icons">
-                            <ul class="list-unstyled">
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-facebook  social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-twitter social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-linkedin social-networks"></i></a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-teams-inner" data-aos="fade-up">
-                        <div class="about-team">
-                            <div class="icons-rounded-box">
-                                <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-team-img3.png' %}" alt=""
-                                        class="img-fluid teams-img-border">
-                                </figure>
-                            </div>
-                        </div>
-                        <h4 class="about-team-members-h4">Steve Morgan</h4>
-                        <p class="about-team-title">Security Technologist</p>
-                        <p class="teams-section-p">Ronec pede justo, fringilla vel, aliquet nec vulputate eget arcu.</p>
-                        <div class="social-icons teams-social-icons">
-                            <ul class="list-unstyled">
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-facebook  social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-square-twitter social-networks"></i></a></li>
-                                <li><a href="" class="text-decoration-none"><i
-                                            class="fa-brands fa-linkedin social-networks"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+        <!-- Конец добавленного заголовка и описания -->
+        <div class="row">
+            {% for developer in developers %}
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-teams-inner">
+                        <div class="about-team">
+                            <div class="icons-rounded-box">
+                                <figure class="mb-0">
+                                    <img src="{{ developer.image.url }}" alt="" class="img-fluid teams-img-border">
+                                </figure>
+                            </div>
+                        </div>
+                        <h4 class="about-team-members-h4">{{ developer.name }}</h4>
+                        <p class="about-team-title">{{ developer.title }}</p>
+                        <p class="teams-section-p">{{ developer.bio|safe }}</p>
+                        <div class="social-icons teams-social-icons">
+                            <ul class="list-unstyled">
+                                {% if developer.facebook_url %}
+                                    <li><a href="{{ developer.facebook_url }}" class="text-decoration-none"><i
+                                            class="fa-brands fa-square-facebook social-networks"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if developer.twitter_url %}
+                                    <li><a href="{{ developer.twitter_url }}" class="text-decoration-none"><i
+                                            class="fa-brands fa-square-twitter social-networks"></i></a></li>
+                                {% endif %}
+                                {% if developer.linkedin_url %}
+                                    <li><a href="{{ developer.linkedin_url }}" class="text-decoration-none"><i
+                                            class="fa-brands fa-linkedin social-networks"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
     <!-- Blogs-Section -->
     <section class="about-us-section-start blogs-section-starts overflow-hidden">
         <div class="container">
