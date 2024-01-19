@@ -42,6 +42,9 @@ body {
   --e-global-color-form-text: #898989;
   --e-global-color-form: #2e1c1c;
   --e-global-color-coming-soon: #737373;
+  --e-global-background-services-box: #ff6347; /* Пример цвета, измените на нужный вам */
+  --e-global-background-services-box-color2: #ffd700;
+  --e-global-color-accent: #ff5722;
   background-image: linear-gradient(
     50deg,
     var(--e-global-color-btn-red) 0%,
@@ -410,7 +413,7 @@ a {
   width: 43px;
   right: 24px;
   top: 17px;
-  height: 43px px;
+  height: 43px;
   position: absolute;
   line-height: 45px !important;
   text-align: center;
@@ -602,7 +605,7 @@ a {
   filter: brightness(0) invert(1);
 }
 .testimonial-logo-img2:hover {
-  border: var(--e-global-color-services);
+  border: var(--e-global-color-white);
 }
 .social-icons li a i {
   color: var(--e-global-color-grey-icons);
@@ -797,12 +800,12 @@ a {
 .about-us-section-start .about-us-content:hover .pricing-plan-h4{
   color: var(--e-global-color-white-banner-text);
 }
-.about-us-section-start .about-us-content:hover .icons-rounded-box figure img{
-  color: var(--e-global-color-white-banner-text);
-  filter: brightness(0) invert(1) !important;
-  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-  filter: gray;
+.about-us-section-start .about-us-content:hover .icons-rounded-box figure img {
+    /* Удаление свойства color, так как оно не применяется к изображениям */
+    filter: brightness(0) invert(1) !important; /* Инвертирует цвета изображения */
+    -webkit-filter: grayscale(100%); /* Для Chrome, Safari, Opera - делает изображение полностью серым */
 }
+
 .about-us-section-start .about-us-content:hover .icons-rounded-box {
 background: var(--e-global-color-btn-red);
 }
@@ -830,9 +833,10 @@ color: var(--e-global-color-white-banner-text);
   margin-bottom: 23px;
 }
 .about-us-section-start .about-us-content .icons-rounded-box .icon-color img {
-  -webkit-filter: grayscale(100%); 
-  filter: gray;
+    -webkit-filter: grayscale(100%); /* Для Chrome, Safari, Opera */
+    filter: grayscale(100%); /* Стандартное свойство для черно-белого фильтра */
 }
+
 .about-us-section-start .about-us-content h4 {
   margin-bottom: 31px;
 }
@@ -923,7 +927,7 @@ letter-spacing: 0;
 .cyber-boxes-section .counetr-heading{
   font-weight: 600;
   margin-bottom: 8px;
-  letter-spacing: 1;
+  letter-spacing: 1px;
 }
 .cyber-boxes-section .about-us-content .icons-rounded-box {
   background: var(--e-global-color-dark-icons-background);
@@ -1164,9 +1168,30 @@ letter-spacing: 0;
   line-height: 26px;
   margin-bottom: 22px;
 }
+.text-block {
+  width: 300px;
+  height: 200px;
+  overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
+  text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
+  /*white-space: nowrap; !* Запрещает переносы строк *!*/
+  word-wrap: break-word;
+  padding: 10px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  color: var(--e-global-color-grey-icons);
+}
+
+.text-block:hover {
+  overflow: visible; /* Показывает всё содержимое при наведении */
+  white-space: normal; /* Возвращает переносы строк при наведении */
+  color: #e2e3e5;
+}
+
+
 .about-teams-section .teams-social-icons{
  display: flex;
- justify-content: center;
+ /*justify-content: center;*/
+  margin-top: 10px;
 }
 .about-teams-section .social-networks-teams{width: 26px;
   height: 29px;
@@ -1209,7 +1234,7 @@ color: var(--e-global-color-about-teams-red);
   .about-teams-section .teams-social-icons ul li a {
   font-size: 14px;
   padding: 6px 10px;
-  background: var(--e-global-color-dark-purple);
+  /*background: var(--e-global-color-grey-cyber-box);*/
   color: var(--e-global-color-white);
   border-radius: 100px;
   line-height: 48px !important;

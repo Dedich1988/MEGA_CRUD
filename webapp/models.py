@@ -49,6 +49,7 @@ class Developer(models.Model):
     facebook_url = models.URLField(blank=True)
     telegram_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
+    instagram_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name

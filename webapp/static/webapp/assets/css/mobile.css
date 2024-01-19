@@ -9,6 +9,30 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+  .text-block {
+    width: 300px;
+    height: 200px;
+    overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
+    text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
+    /*white-space: nowrap; !* Запрещает переносы строк *!*/
+    word-wrap: break-word;
+    padding: 10px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    color: var(--e-global-color-grey-icons);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .text-block:hover {
+  overflow: visible; /* Показывает всё содержимое при наведении */
+  white-space: normal; /* Возвращает переносы строк при наведении */
+  color: #e2e3e5;
+}
+}
+
+
 @media screen and (max-width: 1950px) {
   .about-us-banner-section .home-banner-text {
     padding: 109px 118px 130px 392px;
@@ -23,7 +47,7 @@
   }
 
   .column-sidebar .home-banner-text {
-    padding-right: 38px 130px 363px;
+    padding: 38px 130px 363px;
   }
 
   .about-teams-section .teams-section2 .whyus-icon {
@@ -792,7 +816,7 @@
   }
 
   .navbar-collapse a {
-    color: var(--e-global-color-secondary) !important;
+    color: var(--e-global-color-white-banner-text) !important;
     line-height: 16px;
     padding: 10px 20px !important;
   }
