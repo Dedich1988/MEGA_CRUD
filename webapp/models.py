@@ -53,3 +53,17 @@ class Developer(models.Model):
 
     def __str__(self):
         return self.name
+
+# Услуги кратко на главную страницу
+class Service(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Название")
+    description = models.TextField(verbose_name="Описание")
+    image = models.ImageField(upload_to='services/', verbose_name="Изображение")
+    url = models.URLField(verbose_name="Ссылка на страницу услуги")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Услуга"
+        verbose_name_plural = "Услуги"

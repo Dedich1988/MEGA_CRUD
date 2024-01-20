@@ -574,61 +574,34 @@
     </div>
 </section>
 
-    <!-- Blogs-Section -->
-    <section class="about-us-section-start blogs-section-starts overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="text-center" data-aos="fade-up">Latest News & Blog</h3>
-                    <p class="text-center" data-aos="fade-up-left">Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo
-                        ligula eget dolorenean massa.</p>
-                </div>
+    <!-- Services-Section -->
+<section class="about-us-section-start services-section-start overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center" data-aos="fade-up">Наши Услуги</h3>
+                <p class="text-center" data-aos="fade-up-left">Мы предлагаем инновационные и эффективные ИТ-решения для вашего бизнеса.</p>
             </div>
         </div>
         <div class="container">
             <div class="row">
+                {% for service in services %}
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="blogs-section">
-                        <a href="single-post.html">
-                            <div class="images-blog" data-aos="fade-up">
-                                <figure class="mb-0"><img class="img-fluid" src="{% static 'webapp/assets/images/blog-section-img1.png' %}" alt="">
+                    <div class="services-section">
+                        <a href="{{ service.url }}">
+                            <div class="images-service" data-aos="fade-up">
+                                <figure class="mb-0"><img class="img-fluid" src="{{ service.image }}" alt="{{ service.title }}">
                                 </figure>
                             </div>
-                            <h5 class="blogs-h5">Protect Your Workplace From Cyber Attacks</h5>
-                            <p class="blogs-p">Nullam dictum felis eu pede mollis pre tium Integer tinciduntras dapibusv
-                                enean vulputate eleifend tellus.</p>
+                            <h5 class="services-h5">{{ service.title }}</h5>
+                            <p class="services-p">{{ service.description }}</p>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="blogs-section">
-                        <a href="single-post.html">
-                            <div class="images-blog" data-aos="fade-up">
-                                <figure class="mb-0"><img class="img-fluid" src="{% static 'webapp/assets/images/blog-section-img2.png' %}" alt="">
-                                </figure>
-                            </div>
-                            <h5 class="blogs-h5">The Security Risks Of Changing Package Owners
-                            </h5>
-                            <p class="blogs-p">Quisque rutruma enean imperdiet etiam ultricies nisi vel augue
-                                curabitur unisi nam eget dui etiam rhoncus.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="blogs-section">
-                        <a href="single-post.html">
-                            <div class="images-blog" data-aos="fade-up">
-                                <figure class="mb-0"><img class="img-fluid" src="{% static 'webapp/assets/images/blog-section-img3.png' %}" alt="">
-                                </figure>
-                            </div>
-                            <h5 class="blogs-h5">Avoid Mistakes In Social Media Posts</h5>
-                            <p class="blogs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore.</p>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
+
 
 {% endblock %}

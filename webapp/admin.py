@@ -21,3 +21,6 @@ admin.site.register(Banner, MyModelAdmin)
 
 # Регистрация модели Developer с использованием MyModelAdmin
 admin.site.register(Developer, MyModelAdmin)
+
+# Регистрация модели Service с использованием MyModelAdmin
+admin.site.register(Service, MyModelAdmin)
