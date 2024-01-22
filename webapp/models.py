@@ -1,6 +1,10 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
+
 # Подписчики
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
@@ -61,9 +65,30 @@ class Service(models.Model):
     image = models.ImageField(upload_to='services/', verbose_name="Изображение")
     url = models.URLField(verbose_name="Ссылка на страницу услуги")
 
+
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сначала сохраняем модель
+
+        if self.image:
+            # Открытие изображения
+            pil_image = Image.open(self.image)
+
+            # Проверяем, необходимо ли изменять размер
+            if pil_image.width > 290 or pil_image.height > 200:
+                output_size = (290, 200)
+                pil_image = pil_image.resize(output_size, Image.Resampling.LANCZOS)
+
+                # Сохранение измененного изображения
+                temp_file = BytesIO()
+                pil_image.save(temp_file, format='JPEG')
+                temp_file.seek(0)
+
+                self.image.save(self.image.name, ContentFile(temp_file.read()), save=False)
+                temp_file.close()

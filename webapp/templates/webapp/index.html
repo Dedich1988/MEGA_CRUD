@@ -586,21 +586,23 @@
         <div class="container">
             <div class="row">
                 {% for service in services %}
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="services-section">
-                        <a href="{{ service.url }}">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="services-section">
+
                             <div class="images-service" data-aos="fade-up">
-                                <figure class="mb-0"><img class="img-fluid" src="{{ service.image }}" alt="{{ service.title }}">
+                                <figure class="mb-0"><img class="img-fluid" src="{{ service.image.url }}"
+                                                          alt="{{ service.title }}">
                                 </figure>
                             </div>
                             <h5 class="services-h5">{{ service.title }}</h5>
-                            <p class="services-p">{{ service.description }}</p>
-                        </a>
+                            <p class="services-p">{{ service.description | safe }}</p>
+
+                        </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
+    </div>
     </section>
 
 
