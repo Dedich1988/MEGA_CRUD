@@ -24,3 +24,6 @@ admin.site.register(Developer, MyModelAdmin)
 
 # Регистрация модели Service с использованием MyModelAdmin
 admin.site.register(Service, MyModelAdmin)
+
+# Регистрация модели FAQ с использованием MyModelAdmin
+admin.site.register(FAQ, MyModelAdmin)

@@ -339,108 +339,29 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="cyber-content accordian-text" data-aos="fade-up">
-                        <h3>General Questions Frequently Asked Questions?</h3>
+                        <h3>Ваши Вопросы о Наших IT-Услугах</h3>
                         <div class="accordian-inner">
-                            <div id="accordion1">
+                            {% for faq in faqs %}
                                 <div class="accordion-card">
-                                    <div class="" id="headingFour">
+                                    <div class="" id="heading{{ forloop.counter }}">
                                         <a href="#" class="btn btn-link text-decoration-none"
-                                            data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                                            aria-controls="collapseFour">
-                                            <h5 class="faq-btn-text">How Can I Safely Browse The Internet?</h5>
+                                           data-toggle="collapse" data-target="#collapse{{ forloop.counter }}"
+                                           aria-expanded="false"
+                                           aria-controls="collapse{{ forloop.counter }}">
+                                            <h5 class="faq-btn-text">{{ faq.question }}</h5>
                                         </a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour">
+                                    <div id="collapse{{ forloop.counter }}"
+                                         class="collapse {% if forloop.first %} show {% endif %}"
+                                         aria-labelledby="heading{{ forloop.counter }}">
                                         <div class="card-body">
                                             <p class="text-left accordian-text-color">
-                                                Lorem ipsum dolor sit amet consectetuer adipiscing elitenean
-                                                commo doligula eget dolorenean massaIn enim justo, rhoncus ut,
-                                                imperdiet avene natis vitae justo nullam dictum felis eu.
+                                                {{ faq.answer | safe }}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 2 -->
-                    <div class="cyber-content accordian-text">
-                        <div class="accordian-inner">
-                            <div id="accordion2">
-                                <div class="accordion-card">
-                                    <div class="" id="headingFive">
-                                        <a href="#" class="btn btn-link collapsed text-decoration-none"
-                                            data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
-                                            aria-controls="collapseFive">
-                                            <h5 class="faq-btn-text">How Does Secuvant's Co-managed Security
-                                                Model Work?</h5>
-                                        </a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
-                                        <div class="card-body">
-                                            <p class="text-left accordian-text-color">
-                                                Lorem ipsum dolor sit amet consectetuer adipiscing elitenean
-                                                commo doligula eget dolorenean massaIn enim justo, rhoncus ut,
-                                                imperdiet avene natis vitae justo nullam dictum felis eu.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 3 -->
-                    <div class="cyber-content accordian-text">
-                        <div class="accordian-inner">
-                            <div id="accordion3">
-                                <div class="accordion-card">
-                                    <div class="" id="headingSix">
-                                        <a href="#" class="btn btn-link collapsed text-decoration-none"
-                                            data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
-                                            aria-controls="collapseSix">
-                                            <h5 class="faq-btn-text">What Type Frequency Of Alerts And
-                                                Notifications
-                                                Will Receive?</h5>
-                                        </a>
-                                    </div>
-                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix">
-                                        <div class="card-body">
-                                            <p class="text-left accordian-text-color">
-                                                Lorem ipsum dolor sit amet consectetuer adipiscing elitenean
-                                                commo doligula eget dolorenean massaIn enim justo, rhoncus ut,
-                                                imperdiet avene natis vitae justo nullam dictum felis eu.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 4 -->
-                    <div class="cyber-content accordian-text">
-                        <div class="accordian-inner">
-                            <div id="accordion4">
-                                <div class="accordion-card">
-                                    <div class="" id="headingSeven">
-                                        <a href="#" class="btn btn-link collapsed text-decoration-none"
-                                            data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
-                                            aria-controls="collapseSeven">
-                                            <h5 class="faq-btn-text">How Is Our Data Stored And Protected And
-                                                For
-                                                How Long?</h5>
-                                        </a>
-                                    </div>
-                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven">
-                                        <div class="card-body">
-                                            <p class="text-left accordian-text-color">
-                                                Lorem ipsum dolor sit amet consectetuer adipiscing elitenean
-                                                commo doligula eget dolorenean massaIn enim justo, rhoncus ut,
-                                                imperdiet avene natis vitae justo nullam dictum felis eu.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

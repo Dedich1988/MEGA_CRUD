@@ -44,7 +44,8 @@ def index(request):
     site = Portfolio.objects.all()
     services = Service.objects.all()
     developers = Developer.objects.all()
-    return render(request, 'webapp/index.html', {'site': site, 'developers': developers, 'services': services})
+    faqs = FAQ.objects.all()
+    return render(request, 'webapp/index.html', {'site': site, 'developers': developers, 'services': services,'faqs': faqs})
 
 def about(request):
     """

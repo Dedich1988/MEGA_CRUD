@@ -92,3 +92,10 @@ class Service(models.Model):
 
                 self.image.save(self.image.name, ContentFile(temp_file.read()), save=False)
                 temp_file.close()
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question
