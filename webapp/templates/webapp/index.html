@@ -3,337 +3,262 @@
 
 {% block content %}
 
-    <!-- MINI_pricing_SECTION -->
-<section class="icons-section overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-
-                <h3 class="text-center mt-3 mb-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom">Портфолио</h3>
-
-            </div>
-        </div>
-        <div class="row">
-            {% for item in site %}
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="portfolio-item">
-                    <a href="{{ item.link }}" target="_blank">
-                        <img src="{{ item.image.url }}" alt="{{ item.alt_text }}" class="img-fluid">
-                    </a>
+    <!-- boxes-section -->
+    <div class="about-us-section-start cyber-boxes-section overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <!-- Веб-разработка -->
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon2.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h3 class="counter-heading"><span class="counter">150</span><span class="cyber-counter">+</span>
+                        </h3>
+                        <h5 class="cyber-boxes-text">Разработанных сайтов</h5>
+                    </div>
+                </div>
+                <!-- Мобильные приложения -->
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0 icon-color"><img
+                                    src="{% static 'webapp/assets/images/about-round-icon2.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <h3 class="counter-heading"><span class="counter">200</span><span class="cyber-counter">+</span>
+                        </h3>
+                        <h5 class="cyber-boxes-text">Мобильных приложений</h5>
+                    </div>
+                </div>
+                <!-- Удовлетворенность клиентов -->
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h3 class="counter-heading"><span class="counter">98</span><span class="cyber-counter">%</span>
+                        </h3>
+                        <h5 class="cyber-boxes-text">Удовлетворенность клиентов</h5>
+                    </div>
+                </div>
+                <!-- Команда экспертов -->
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon4.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h3 class="counter-heading"><span class="counter">50</span><span class="cyber-counter">+</span>
+                        </h3>
+                        <h5 class="cyber-boxes-text">Экспертов в команде</h5>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
-</section>
 
-
-
-    <!-- ABOUT-US_SECTION -->
-    <section class="about-us-section-start">
-        <div class="about-right-icon position-relative" data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine">
-            <figure class="whyus-icon"><img src="{% static 'webapp/assets/images/about-us-section-right-icon.png' %}" alt=""
-                    class="img-fluid">
-            </figure>
-        </div>
+    <!-- Портфолио -->
+    <section class="icons-section overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center"  data-aos="fade-up"
-                    data-aos-anchor-placement="top-bottom">Ваша Карьера в IT Начинается Здесь!</h3>
-                        <p class="text-center">Независимо от того, на каком этапе карьеры вы находитесь, наши курсы предоставят вам знания и навыки, необходимые для успеха в динамичной индустрии IT.
-                        </p>
+
+                    <h3 class="text-center mt-3 mb-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        Портфолио</h3>
+
                 </div>
             </div>
-
-            <!--PRICING-PLAN_SECTION -->
-            <section class="about-us-section-start pricing-plan-section pricing-page overflow-hidden">
-        <div class="container">
             <div class="row">
-                {% for plan in plans %}
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                        <div class="about-us-content" data-aos="fade-up">
-                            <div class="icons-rounded-box">
-                                <figure class="mb-0"><img src="{{ plan.image.url }}" alt="{{ plan.title }}">
-                                </figure>
-                            </div>
-                            <h4 class="pricing-plan-h4">{{ plan.title }}</h4>
-                            <h3 class="pricing-plan-color">${{ plan.price }}<span
-                                    class="pricing-free-text">{{ plan.price_description }}</span></h3>
-                            <p class="pricing-plan-color-p">{{ plan.description|truncatechars:125|safe }}</p>
-                            <div class="order-now-btn">
-                                <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                            </div>
+                {% for item in site %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="portfolio-item">
+                            <a href="{{ item.link }}" target="_blank">
+                                <img src="{{ item.image.url }}" alt="{{ item.alt_text }}" class="img-fluid">
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-{#            <div class="row">#}
-{#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-{#                    <div class="about-us-content" data-aos="fade-up"#}
-{#                    data-aos-anchor-placement="bottom-bottom">#}
-{#                        <div class="icons-rounded-box">#}
-{#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}" alt="">#}
-{#                            </figure>#}
-{#                        </div>#}
-{#                        <h4>Security Services</h4>#}
-{#                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate#}
-{#                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>#}
-{#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-{#                                    class="fa fa-angle-right"></i></span></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-{#                    <div class="about-us-content" data-aos="fade-up"#}
-{#                    data-aos-anchor-placement="bottom-bottom">#}
-{#                        <div class="icons-rounded-box">#}
-{#                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/about-round-icon2.png' %}" alt="">#}
-{#                            </figure>#}
-{#                        </div>#}
-{#                        <h4>Data Privacy</h4>#}
-{#                        <p class="security-services-p">Lorem ipsum dolor sit ametconsectetuer dipiscing#}
-{#                            elitaenean commodo ligula eget dolor aenean massa.</p>#}
-{#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-{#                                    class="fa fa-angle-right"></i></span></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-{#                    <div class="about-us-content" data-aos="fade-up"#}
-{#                    data-aos-anchor-placement="bottom-bottom">#}
-{#                        <div class="icons-rounded-box">#}
-{#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon3.png' %}" alt="">#}
-{#                            </figure>#}
-{#                        </div>#}
-{#                        <h4>Industry Certified</h4>#}
-{#                        <p class="security-services-p">Integer tincidunt Cras dapibus bivamus ele mentum semper#}
-{#                            nisienean vulputate eleife nd tellusenean leo ligula.</p>#}
-{#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-{#                                    class="fa fa-angle-right"></i></span></a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-        </div>
-    </section>
 
 
-    <!-- CYBER-SECURITY-SECTION -->
-    <section class="cyber-security-section overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-12">
-                    <div class="cyber-content-img" data-aos="fade-up-left">
-                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-security-left-img.png' %}" alt=""
-                                class="cyber-security-provider-img">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-1"></div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="cyber-content" data-aos="fade-up-right">
-                        <h3>Advanced <span class="cyber-text">Cyber Security</span> Provider</h3>
-                        <p class="security-services-p">Lorem ipsum dolor sit amet consectetuer adipiscing
-                            elitenean commo doligula eget dolorenean massa.In enim justo, rhoncus ut, imperdiet
-                            avene natis vitae justo nullam dictum felis eu pede mollis pretium Inte ger tincid
-                            unt cras dapibus</p>
-                        <p class="security-services-p cyber-p-margin-bottom">Vamus elementum semper nisi aenean
-                            vulputate eleife nd tellus onsec tet ueradip.</p>
-                        <div class="cyber-contact-btn">
-                            <a href="contact.html" class="text-decoration-none">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- boxes-section -->
-    <div class="about-us-section-start cyber-boxes-section overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon1.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">3325</span><span
-                                class="cyber-counter">+</span></h3>
-                        <h5 class="cyber-boxes-text">Global Projects</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/cyber-section-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">4579</span><span
-                                class="cyber-counter clients-protect">+</span>
-                        </h3>
-                        <h5 class="cyber-boxes-text">Clients Protect</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content"  data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon3.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">100</span><span
-                                class="cyber-counter cyber-percent">%</span></h3>
-                        <h5 class="cyber-boxes-text">Service Guarantee</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content"  data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon4.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">7845</span><span
-                                class="cyber-counter expert-team">+</span></h3>
-                        <h5 class="cyber-boxes-text">Experts Team</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- CYBER-SECURITY-SOLUTION -->
-    <section class="cyber-security-section cyber-security-section2 overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="cyber-content" data-aos="fade-up-left">
-                        <h3>Providing Best <span class="cyber-text">Cyber Security </span>Solutions</h3>
-                        <p class="security-services-p">Lorem ipsum dolor sit amet consectetuer adipiscing
-                            elitenean commo doligula eget dolorenean massa.In enim justo, rhoncus ut, imperdiet
-                            avene natis vitae justo nullam dictum felis eu pede mollis pretium Inte ger tincid
-                            unt cras dapibus</p>
-                        <p class="security-services-p cyber-p-margin-bottom">Vamus elementum semper nisi aenean
-                            vulputate eleife nd tellus onsec tet ueradip.</p>
-                        <div class="cyber-contact-btn">
-                            <a href="contact.html" class="text-decoration-none">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-12 text-md-right text-center">
-                    <div class="cyber-content-img-right" data-aos="fade-up-right">
-                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-security-right-img.png' %}" alt="" class="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT-US_SECTION2 -->
-    <section class="about-us-section-start about-us-section-2 overflow-hidden">
-        <div class="about-right-icon position-relative">
-            <figure class="about2-left-img"><img src="{% static 'webapp/assets/images/about-section2-left-img.png' %}" alt=""
-                    class="img-fluid">
+
+    <!-- Ваша Карьера в IT Начинается Здесь! -->
+    <section class="about-us-section-start">
+        <div class="about-right-icon position-relative" data-aos="fade-right"
+             data-aos-offset="300"
+             data-aos-easing="ease-in-sine">
+            <figure class="whyus-icon"><img src="{% static 'webapp/assets/images/about-us-section-right-icon.png' %}"
+                                            alt=""
+                                            class="img-fluid">
             </figure>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text-center offer-section-title"  data-aos="flip-up">What We Offer</h3>
-                    <p class="text-center"  data-aos="fade-left">Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo
-                        ligula eget dolorenean massa.</p>
+                    <h3 class="text-center" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom">Ваша Карьера в IT Начинается Здесь!</h3>
+                    <p class="text-center">Независимо от того, на каком этапе карьеры вы находитесь, наши курсы
+                        предоставят вам знания и навыки, необходимые для успеха в динамичной индустрии IT.
+                    </p>
                 </div>
             </div>
+
+            <!--PRICING-PLAN_SECTION -->
+            <section class="about-us-section-start pricing-plan-section pricing-page overflow-hidden">
+                <div class="container">
+                    <div class="row">
+                        {% for plan in plans %}
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="about-us-content" data-aos="fade-up">
+                                    <div class="icons-rounded-box">
+                                        <figure class="mb-0"><img src="{{ plan.image.url }}" alt="{{ plan.title }}">
+                                        </figure>
+                                    </div>
+                                    <h4 class="pricing-plan-h4">{{ plan.title }}</h4>
+                                    <h3 class="pricing-plan-color">${{ plan.price }}<span
+                                            class="pricing-free-text">{{ plan.price_description }}</span></h3>
+                                    <p class="pricing-plan-color-p">{{ plan.description|truncatechars:125|safe }}</p>
+                                    <div class="order-now-btn">
+                                        <a href="pricing.html" class="text-decoration-none ">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            {#            <div class="row">#}
+            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
+            {#                    <div class="about-us-content" data-aos="fade-up"#}
+            {#                    data-aos-anchor-placement="bottom-bottom">#}
+            {#                        <div class="icons-rounded-box">#}
+            {#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}" alt="">#}
+            {#                            </figure>#}
+            {#                        </div>#}
+            {#                        <h4>Security Services</h4>#}
+            {#                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate#}
+            {#                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>#}
+            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
+            {#                                    class="fa fa-angle-right"></i></span></a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
+            {#                    <div class="about-us-content" data-aos="fade-up"#}
+            {#                    data-aos-anchor-placement="bottom-bottom">#}
+            {#                        <div class="icons-rounded-box">#}
+            {#                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/about-round-icon2.png' %}" alt="">#}
+            {#                            </figure>#}
+            {#                        </div>#}
+            {#                        <h4>Data Privacy</h4>#}
+            {#                        <p class="security-services-p">Lorem ipsum dolor sit ametconsectetuer dipiscing#}
+            {#                            elitaenean commodo ligula eget dolor aenean massa.</p>#}
+            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
+            {#                                    class="fa fa-angle-right"></i></span></a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
+            {#                    <div class="about-us-content" data-aos="fade-up"#}
+            {#                    data-aos-anchor-placement="bottom-bottom">#}
+            {#                        <div class="icons-rounded-box">#}
+            {#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon3.png' %}" alt="">#}
+            {#                            </figure>#}
+            {#                        </div>#}
+            {#                        <h4>Industry Certified</h4>#}
+            {#                        <p class="security-services-p">Integer tincidunt Cras dapibus bivamus ele mentum semper#}
+            {#                            nisienean vulputate eleife nd tellusenean leo ligula.</p>#}
+            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
+            {#                                    class="fa fa-angle-right"></i></span></a>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- MEGA CRUD: Решения Веб-Разработки и ИТ-Инноваций -->
+    <section class="cyber-security-section cyber-security-section2 overflow-hidden">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon1.png' %}" alt="">
-                            </figure>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="cyber-content" data-aos="fade-up-left">
+                        <h3>MEGA CRUD: <span class="cyber-text">Решения</span> Веб-Разработки и ИТ-Инноваций</h3>
+                        <p class="security-services-p">В MEGA CRUD мы сочетаем передовые технологии и глубокие знания в
+                            области IT, чтобы предоставить вашему бизнесу необходимые инструменты для успеха. Наша
+                            команда специализируется на создании мощных веб-приложений, интегрированных API и
+                            интеллектуальных ботов для ВК и Telegram.</p>
+                        <p class="security-services-p cyber-p-margin-bottom">Мы также активно работаем с Flutterflow,
+                            предлагая высококачественные мобильные решения, которые помогают вашему бизнесу выйти на
+                            новый уровень в эпоху цифровизации.</p>
+                        <div class="cyber-contact-btn">
+                            <a href="contact.html" class="text-decoration-none">Свяжитесь с Нами</a>
                         </div>
-                        <h4>Threat Intelligence</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/about-section2-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>Security Assessment</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon3.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>Compromise Assessment</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon4.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>Incident Response</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>Security Training</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon6.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>CLoud Security</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                    class="fa fa-angle-right"></i></span></a>
+                <div class="col-lg-5 col-md-5 col-sm-12 text-md-right text-center">
+                    <div class="cyber-content-img-right" data-aos="fade-up-right">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-security-right-img.png' %}"
+                                                  alt="MEGA CRUD - ИТ-инновации и решения" class="">
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Accordian-Section -->
+
+    <!-- Услуги -->
+    <section class="about-us-section-start services-section-start overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center" data-aos="fade-up">Наши Услуги</h3>
+                    <p class="text-center" data-aos="fade-up-left">Мы предлагаем инновационные и эффективные ИТ-решения
+                        для вашего бизнеса.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    {% for service in services %}
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="services-section">
+
+                                <div class="images-service" data-aos="fade-up">
+                                    <figure class="mb-0"><img class="img-fluid" src="{{ service.image.url }}"
+                                                              alt="{{ service.title }}">
+                                    </figure>
+                                </div>
+                                <h5 class="services-h5">{{ service.title }}</h5>
+                                <p class="services-p">{{ service.description | safe }}</p>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--FAQ -->
     <section class="cyber-security-section accordian-section overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="faq-content-img" data-aos="fade-right">
-                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/accordian-left-img.png' %}" alt="" class="">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/accordian-left-img.png' %}"
+                                                  alt="" class="">
                         </figure>
                     </div>
                 </div>
@@ -368,163 +293,206 @@
             </div>
         </div>
     </section>
-    <!--PRICING-PLAN_SECTION -->
-    <section class="about-us-section-start pricing-plan-section overflow-hidden">
+
+    <!-- Наша Профессиональная Команда -->
+    <section class="about-us-section-start about-teams-section about-page-teams">
         <div class="container">
+            <!-- Добавленный заголовок и описание -->
             <div class="row">
-                <div class="col-12">
-                    <h3 class="text-center" data-aos="fade-up">Your Pricing Plan</h3>
-                    <p class="text-center" data-aos="fade-up-left">Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo
-                        ligula eget dolorenean massa.</p>
+                <div class="col-lg-12">
+                    <h3 class="text-center" data-aos="fade-up">Наша Профессиональная Команда</h3>
+                    <p class="text-center" data-aos="fade-up-left">Собрались лучшие умы в IT, чтобы создавать инновации
+                        и
+                        решать сложнейшие задачи. Наша команда - это синергия опыта, таланта и страсти к
+                        технологиям.</p>
+
                 </div>
             </div>
+            <!-- Конец добавленного заголовка и описания -->
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon1.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Beginner</h4>
-                        <h3 class="pricing-plan-color">Free <span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">30 Days Product Testing
-                            Upgrade Anytime Protection
-                            500 Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 12 Hrs
-                            Configure Software One-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/pricing-plan-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Business</h4>
-                        <h3 class="pricing-plan-color">$39.99<span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">40 Days Product Testing
-                            Upgrade Anytime Protection
-                            1000 Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 13 Hrs
-                            Configure Software One-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/pricing-plan-icon3.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4 class="pricing-plan-h4">Exclusive</h4>
-                        <h3 class="pricing-plan-color">$47.85 <span class="pricing-free-text">/Month</span></h3>
-                        <p class="pricing-content">50 Days Product Testing
-                            Upgrade Anytime Protection
-                            Unlimited Malware Removal
-                            24/7 Live Assistance
-                            Scan Every 14 Hrs
-                            Configure Software Life-time</p>
-                        <div class="order-now-btn">
-                            <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT-TEAM-SECTION -->
-<section class="about-us-section-start about-teams-section about-page-teams">
-    <div class="container">
-        <!-- Добавленный заголовок и описание -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 class="text-center" data-aos="fade-up">Наша Профессиональная Команда</h3>
-                <p class="text-center" data-aos="fade-up-left">Собрались лучшие умы в IT, чтобы создавать инновации и
-                    решать сложнейшие задачи. Наша команда - это синергия опыта, таланта и страсти к технологиям.</p>
-
-            </div>
-        </div>
-        <!-- Конец добавленного заголовка и описания -->
-        <div class="row">
-            {% for developer in developers %}
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-teams-inner">
-                        <div class="about-team">
-                            <div class="icons-rounded-box">
-                                <figure class="mb-0">
-                                    <img src="{{ developer.image.url }}" alt="" class="img-fluid teams-img-border">
-                                </figure>
-                            </div>
-                        </div>
-
-                        <h4 class="about-team-members-h4">{{ developer.name }}</h4>
-                        <p class="about-team-title">{{ developer.title }}</p>
-                        <div class="text-block"><p class="teams-section-p">{{ developer.bio|safe }}</p></div>
-
-                        <div class="social-icons teams-social-icons">
-                            <ul class="list-unstyled">
-
-                                {% if developer.telegram_url %}
-                                    <li><a href="{{ developer.telegram_url }}" class="text-decoration-none"><i
-                                            class="fa-brands fa-telegram social-networks"></i></a>
-                                    </li>
-                                {% endif %}
-                                {% if developer.instagram_url %}
-                                    <li><a href="{{ developer.instagram_url }}" class="text-decoration-none"><i
-                                            class="fa-brands fa-instagram social-networks"></i></a>
-                                    </li>
-
-                                {% endif %}
-                                {% if developer.linkedin_url %}
-                                    <li><a href="{{ developer.linkedin_url }}" class="text-decoration-none"><i
-                                            class="fa-brands fa-linkedin social-networks"></i></a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-    <!-- Services-Section -->
-<section class="about-us-section-start services-section-start overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 class="text-center" data-aos="fade-up">Наши Услуги</h3>
-                <p class="text-center" data-aos="fade-up-left">Мы предлагаем инновационные и эффективные ИТ-решения для вашего бизнеса.</p>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                {% for service in services %}
+                {% for developer in developers %}
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <div class="services-section">
-
-                            <div class="images-service" data-aos="fade-up">
-                                <figure class="mb-0"><img class="img-fluid" src="{{ service.image.url }}"
-                                                          alt="{{ service.title }}">
-                                </figure>
+                        <div class="about-teams-inner">
+                            <div class="about-team">
+                                <div class="icons-rounded-box">
+                                    <figure class="mb-0">
+                                        <img src="{{ developer.image.url }}" alt="" class="img-fluid teams-img-border">
+                                    </figure>
+                                </div>
                             </div>
-                            <h5 class="services-h5">{{ service.title }}</h5>
-                            <p class="services-p">{{ service.description | safe }}</p>
 
+                            <h4 class="about-team-members-h4">{{ developer.name }}</h4>
+                            <p class="about-team-title">{{ developer.title }}</p>
+                            <div class="text-block"><p class="teams-section-p">{{ developer.bio|safe }}</p></div>
+
+                            <div class="social-icons teams-social-icons">
+                                <ul class="list-unstyled">
+
+                                    {% if developer.telegram_url %}
+                                        <li><a href="{{ developer.telegram_url }}" class="text-decoration-none"><i
+                                                class="fa-brands fa-telegram social-networks"></i></a>
+                                        </li>
+                                    {% endif %}
+                                    {% if developer.instagram_url %}
+                                        <li><a href="{{ developer.instagram_url }}" class="text-decoration-none"><i
+                                                class="fa-brands fa-instagram social-networks"></i></a>
+                                        </li>
+
+                                    {% endif %}
+                                    {% if developer.linkedin_url %}
+                                        <li><a href="{{ developer.linkedin_url }}" class="text-decoration-none"><i
+                                                class="fa-brands fa-linkedin social-networks"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
     </section>
+
+    <!-- будет блог нужно сделать -->
+    <section class="about-us-section-start about-us-section-2 overflow-hidden">
+        <div class="about-right-icon position-relative">
+            <figure class="about2-left-img"><img src="{% static 'webapp/assets/images/about-section2-left-img.png' %}"
+                                                 alt=""
+                                                 class="img-fluid">
+            </figure>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center offer-section-title" data-aos="flip-up">Блога MEGA CRUD</h3>
+                    <p class="text-center" data-aos="fade-left">Lorem ipsum dolor sit amet consectetuer adipiscing
+                        elitenean commodo
+                        ligula eget dolorenean massa.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon1.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h4>Threat Intelligence</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0 icon-color"><img
+                                    src="{% static 'webapp/assets/images/about-section2-icon2.png' %}" alt="">
+                            </figure>
+                        </div>
+                        <h4>Security Assessment</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content about-margin-bottom" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon3.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h4>Compromise Assessment</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon4.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h4>Incident Response</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h4>Security Training</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="about-us-content" data-aos="fade-up">
+                        <div class="icons-rounded-box">
+                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-section2-icon6.png' %}"
+                                                      alt="">
+                            </figure>
+                        </div>
+                        <h4>CLoud Security</h4>
+                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
+                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
+                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Платформер MEGA CRUD на основе энтузиазма! -->
+    <section class="cyber-security-section overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="cyber-content-img" data-aos="fade-up-left">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/MEGACOOL1.png' %}"
+                                                  alt="MEGA CRUD Platformer Project"
+                                                  class="cyber-security-provider-img">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="cyber-content" data-aos="fade-up-right">
+                        <h3>Платформер <span class="cyber-text">MEGA CRUD</span> на основе энтузиазма!</h3>
+                        <p class="security-services-p">Представляем наш новаторский проект - юмористический платформер
+                            MEGA CRUD! Вдохновленный креативностью и инновациями, этот проект сочетает в себе
+                            оригинальную графику, захватывающую музыку и уникальный дизайн.</p>
+                        <p class="security-services-p cyber-p-margin-bottom">Разрабатываемый совместно с талантливыми
+                            индийскими программистами, музыкантами и творческими личностями со всего мира, этот проект
+                            находится в стадии идеи и первоначальных эскизов. Мы воплощаем в жизнь нечто большее, чем
+                            просто игра – это путешествие в новый мир развлечений и технологий.</p>
+                        <div class="cyber-contact-btn">
+                            <a href="contact.html" class="text-decoration-none">Узнать Больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 {% endblock %}
