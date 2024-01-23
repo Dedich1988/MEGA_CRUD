@@ -16,10 +16,6 @@ urlpatterns = [
     path('bot/', bot, name='bot'),
     path('pars/', pars, name='pars'),
 
-    path('infinite_scroll/', infinite_scroll, name='infinite_scroll'),
-    path('single_post/', single_post, name='single_post'),
-
-
     path('pricing/', pricing, name='pricing'),
 
     path('subscribe/', subscribe, name='subscribe'),

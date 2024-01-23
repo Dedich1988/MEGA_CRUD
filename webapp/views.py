@@ -101,9 +101,3 @@ def pricing(request):
     return render(request, 'webapp/pricing.html')
 
 
-def single_post(request):
-    return render(request, 'webapp/../blog/templates/blog/single-post.html')
-
-def infinite_scroll(request):
-    return render(request, 'webapp/../blog/templates/blog/infinite-scroll.html')
-

@@ -108,17 +108,24 @@
                                                aria-expanded="false">Blogs</a>
                                             <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">
                                                 <ul class="list-unstyled">
-                                                    <li class="nav-item"><a
-                                                            class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'single_post' %}active{% endif %}"
-                                                            href="{% url 'webapp:single_post' %}">Single Post</a></li>
-                                                    <li class="nav-item"><a
-                                                            class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'infinite_scroll' %}active{% endif %}"
-                                                            href="{% url 'webapp:infinite_scroll' %}">Infinite
-                                                        Scroll</a></li>
-                                                    <!-- Добавьте остальные пункты меню здесь, следуя тому же шаблону -->
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:single_post' %}active{% endif %}"
+                                                           href="{% url 'blog:single_post' %}">Single Post</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:infinite_scroll' %}active{% endif %}"
+                                                           href="{% url 'blog:infinite_scroll' %}">Infinite Scroll</a>
+                                                    </li>
+                                                <li class="nav-item">
+                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:infinite_scroll' %}active{% endif %}"
+                                                           href="{% url 'blog:two_column' %}">Two colums</a>
+                                                    </li>
+                                                    <!-- Добавьте остальные пункты меню, следуя этому шаблону -->
+                                                                                                <!-- Повторяйте для каждого шаблона блога -->
                                                 </ul>
                                             </div>
                                         </li>
+
 
                                         <li class="nav-item navbar-text-color {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}">
                                             <a class="nav-link text-decoration-none contact-us-margin navbar-text-color"
@@ -380,3 +387,4 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{% static 'webapp/assets/js/text-animations.js' %}"></script>
 
+    </div>
