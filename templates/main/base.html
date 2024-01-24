@@ -37,6 +37,7 @@
         <meta name="msapplication-TileImage" content="{% static 'webapp/assets/images/favicons/ms-icon-144x144.png' %}">
         <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="{% static 'webapp/assets/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'blog/assets/js/bootstrap.min.js' %}"/>
         <link rel="stylesheet" href="{% static 'webapp/assets/css/style.css' %}"/>
         <link rel="stylesheet" href="{% static 'webapp/assets/css/mobile.css' %}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
@@ -45,6 +46,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'blog/assets/css/super-class.css' %}"/>
+        <link rel="stylesheet" href="{% static 'blog/assets/css/custom-style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'blog/assets/css/owl.carousel.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'blog/assets/css/owl.theme.default.min.css' %}"/>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+
     </head>
 {% endblock head %}
 
@@ -145,7 +154,7 @@
         </header>
         <!-- BANNER-SECTION -->
     <div class="home-banner-section overflow-hidden">
-        {% include 'main/banner.html' %}
+
     </div>
 
   {% block content %}{% endblock %}
@@ -386,5 +395,7 @@
     <script src="{% static 'webapp/assets/js/owl.carousel.js' %}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{% static 'webapp/assets/js/text-animations.js' %}"></script>
+
+
 
     </div>
