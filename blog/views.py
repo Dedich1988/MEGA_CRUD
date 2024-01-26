@@ -23,7 +23,10 @@ def one_column(request):
     return render(request, 'blog/one-column.html')
 
 def three_column(request):
+
     return render(request, 'blog/three-column.html')
+
+
 
 def three_column_sidebar(request):
     return render(request, 'blog/three-colum-sidbar.html')

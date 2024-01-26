@@ -4,7 +4,7 @@ from .forms import SubscribeForm
 from django.core.mail import send_mail
 from django.db import IntegrityError  # Импорт для обработки исключений
 from .models import *
-
+from blog.models import BlogPost
 
 def send_confirmation_email(email):
     # Функция для отправки подтверждающего письма
@@ -45,7 +45,11 @@ def index(request):
     services = Service.objects.all()
     developers = Developer.objects.all()
     faqs = FAQ.objects.all()
-    return render(request, 'webapp/index.html', {'site': site, 'developers': developers, 'services': services,'faqs': faqs})
+    latest_posts = BlogPost.objects.order_by('-post_date')[:6]
+    return render(request, 'webapp/index.html', {'site': site, 'developers': developers, 'services': services,'faqs': faqs, 'latest_posts': latest_posts})
+
+
+
 
 def about(request):
     """

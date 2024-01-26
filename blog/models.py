@@ -1,5 +1,9 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+import sys
 
 class BlogPost(models.Model):
     MEDIA_CHOICES = (
@@ -24,5 +28,20 @@ class BlogPost(models.Model):
     audio_file = models.FileField(upload_to='audios/', blank=True, null=True)
     audio_url = models.URLField(blank=True, null=True)
 
+    def save(self, *args, **kwargs):
+        # Сначала сохраняем модель
+        super(BlogPost, self).save(*args, **kwargs)
+
+        # Проверяем, есть ли изображение
+        if self.image:
+            img = Image.open(self.image.path)
+
+            # Изменение размера изображения
+            if img.height > 150 or img.width > 300:
+                output_size = (300, 150)
+                img.thumbnail(output_size)
+
+                # Сохраняем измененное изображение
+                img.save(self.image.path)
     def __str__(self):
         return self.title
