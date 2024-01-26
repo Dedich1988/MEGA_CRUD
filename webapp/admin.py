@@ -10,6 +10,10 @@ class MyModelAdmin(admin.ModelAdmin):
         models.TextField: {'widget': CKEditorUploadingWidget},
     }
 
+
+
+
+
 # Регистрация модели PricingPlan с использованием MyModelAdmin
 admin.site.register(PricingPlan, MyModelAdmin)
 
