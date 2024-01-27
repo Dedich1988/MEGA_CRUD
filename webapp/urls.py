@@ -15,6 +15,7 @@ urlpatterns = [
     path('web_beck/', web_beck, name='web_beck'),
     path('bot/', bot, name='bot'),
     path('pars/', pars, name='pars'),
+    path('contact', contact, name='contact'),
 
     path('pricing/', pricing, name='pricing'),
 

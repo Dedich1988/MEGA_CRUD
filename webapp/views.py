@@ -104,4 +104,9 @@ def pricing(request):
     """
     return render(request, 'webapp/pricing.html')
 
-
+def contact(request):
+    """
+    Renders the pricing page.
+    TODO: Add logic for testimonials page processing.
+    """
+    return render(request, 'webapp/contact.html')

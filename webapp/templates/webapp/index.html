@@ -377,7 +377,12 @@
                     <!-- Ваш код для отображения видео -->
                     <!-- Пример для видео файла -->
                     {% if post.video_file %}
-                    <video src="{{ post.video_file.url }}" controls></video>
+                        <div class="blog-video">
+                            <video width="300" height="150" controls>
+                                <source src="{{ post.video_file.url }}" type="video/mp4">
+                                Ваш браузер не поддерживает видео тег.
+                            </video>
+                        </div>
                     {% endif %}
                     <!-- Пример для внешнего видео URL -->
                     {% if post.video_url %}
