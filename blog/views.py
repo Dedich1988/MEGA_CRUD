@@ -16,7 +16,7 @@ def two_column(request):
 
 
 def load_more(request):
-    return render(request, 'blog/comming-soon.html')
+    return render(request, 'blog/load-more.html')
 
 
 def one_column(request):
