@@ -405,54 +405,6 @@
 </section>
 
 
-<!-- MAIN SECTION -->
-<section class="blog-posts overflow-hidden">
-  <div class="container">
-    <div class="row">
-      {% for post in latest_posts %}
-        <div class="col-xl-4 col-lg-4">
-          <div class="float-left w-100 post-item border mb-4">
-            <div class="post-item-wrap position-relative">
-
-              {% if post.media_type == 'IMG' %}
-                <!-- Ваш код для отображения изображения -->
-                <div class="post-image">
-                  <a href="#">
-                    <img alt="{{ post.title }}" src="{{ post.image.url }}" />
-                  </a>
-                  <span class="post-meta-category">
-                    <a href="#">{{ post.category }}</a>
-                  </span>
-                </div>
-              {% elif post.media_type == 'VID' %}
-                <!-- Ваш код для отображения видео -->
-                {% if post.video_file %}
-                  <div class="blog-video">
-                    <video width="300" height="150" controls>
-                      <source src="{{ post.video_file.url }}" type="video/mp4">
-                      Ваш браузер не поддерживает видео тег.
-                    </video>
-                  </div>
-                {% endif %}
-              {% endif %}
-
-              <div class="post-item-description">
-                <span class="post-meta-date">{{ post.post_date }}</span>
-                <span class="post-meta-comments">
-                  <a href="#">{{ post.comments_count }} Comments</a>
-                </span>
-                <h2><a href="#">{{ post.title }}</a></h2>
-                <p>{{ post.content|safe|truncatewords:20 }}</p>
-                <a href="single-post.html" class="item-link text-decoration-none">Read More <i class="fa fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 
 
     <!-- Платформер MEGA CRUD на основе энтузиазма! -->

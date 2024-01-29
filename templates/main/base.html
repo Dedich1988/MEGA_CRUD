@@ -211,204 +211,138 @@
 
 
 
-{#<section class="blogs-section-starts form-section-starts overflow-hidden">#}
-{#    <div class="container">#}
-{#        <div class="row">#}
-{#            <div class="col-lg-12 col-md-12 col-sm-12">#}
-{#                <div class="form-section" data-aos="fade-up">#}
-{#                    <h3 class="text-center" data-aos="fade-up">Subscribe Our Newsletter</h3>#}
-{#                    <p class="text-center form-section-p" data-aos="fade-up-left">#}
-{#                        Lorem ipsum dolor sit amet consectetuer adipiscing#}
-{#                        elitenean commodo ligula eget dolorenean massa.#}
-{#                    </p>#}
-{#                    <form method="post">#}
-{#                        {% csrf_token %}#}
-{#                        <div class="input-group mb-3 input-field-form">#}
-{#                            {{ form.email }}#}
-{#                            <div class="input-group-append form-button">#}
-{#                                <button class="btn btn-form-section" type="submit">Subscribe</button>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </form>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-
-    <!-- Footer-Section -->
-    <div class="footer-section">
-        <div class="about-right-icon">
-            <figure class="footer-icon"><img src="{% static 'webapp/assets/images/footer-left.png' %}" alt="" class="img-fluid">
-            </figure>
-        </div>
-        <div class="footer-outer-margin" data-aos="fade-up">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="footer-content1" data-aos="flip-left">
-                            <figure>
-                                <a href="index.html"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt="" class="img-fluid" /></a>
-                            </figure>
-                            <p class="red-light-footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do
-                                eiusmod tempororem ipsum dolor sit am econsect ametconsectetetur adipiscing.</p>
-                            <div class="social-icons teams-social-icons">
-                                <ul class="list-unstyled">
-                                    <li><a href="" class="text-decoration-none red-hover"><i
-                                                class="fa-brands fa-square-facebook  social-networks"></i></a></li>
-                                    <li><a href="" class="text-decoration-none red-hover"><i
-                                                class="fa-brands fa-square-twitter social-networks"></i></a></li>
-                                    <li><a href="" class="text-decoration-none red-hover"><i
-                                                class="fa-brands fa-linkedin social-networks"></i></a></li>
-                                    <li><a href="" class="text-decoration-none red-hover"><i
-                                                class="fa-brands fa-square-pinterest social-networks"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 d-xl-block d-none"></div>
-                    <div class="col-xl-2 col-lg-3 col-md-2 col-sm-12 d-lg-block d-none">
-                        <ul class="list-unstyled services-footer" data-aos="flip-left">
-                            <li class="list-item footer-margin-left">
-                                <h5 class="footer-link  footer-services-heading">
-                                    Services
-                                </h5>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="index.html" class="text-decoration-none footer-link-p">
-                                    Threat Hunter
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="about.html" class="text-decoration-none footer-link-p">
-                                    Incident Responder
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="services.html" class="text-decoration-none footer-link-p">
-                                    Secure Managed IT
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="teams.html" class="text-decoration-none footer-link-p">
-                                    Compliance
-                                </a>
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="testimonial.html" class="text-decoration-none footer-link-p">
-                                    Cyber Security
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="pricing.html" class="text-decoration-none footer-link-p">
-                                    Disaster Planning
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-12 d-md-block d-none">
-                        <ul class="list-unstyled support-footer" data-aos="flip-left">
-                            <li class="list-item footer-margin-left">
-                                <h5 class="footer-link footer-services-heading">
-                                    Support
-                                </h5>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="index.html" class="text-decoration-none footer-link-p">
-                                    Support
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="contact.html" class="text-decoration-none footer-link-p">
-                                    Contact Us
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="services.html" class="text-decoration-none footer-link-p">
-                                    Knowledge Base
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="about.html" class="text-decoration-none footer-link-p">
-                                    About Us
-                                </a>
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="faq.html" class="text-decoration-none footer-link-p">
-                                    FAQ
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-caret-right"></i>
-                                <a href="testimonial.html" class="text-decoration-none footer-link-p">
-                                    Partnerships
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-list">
-                            <div class="icon-list-box1" data-aos="flip-left">
-                                <ul class="list-unstyled contact-us-ul">
-                                    <li class="list-item">
-                                        <h5 class="footer-link footer-get-heading">
-                                            Get in Touch
-                                        </h5>
-                                    </li>
-                                    <li class="list-item position-reletive addres-list icon-list1">
-                                        <div class="number"><a href="mailto:webmaster@example.com"
-                                                class="text-decoration-none footer-link-p ml-0"><span
-                                                    class="footer-additional">Email: </span> info@redlight.com</a></div>
-                                    </li>
-                                    <li class="list-item position-reletive addres-list icon-list1">
-                                        <div class="contact-number"><a href="tel:+4733378901"
-                                                class="text-decoration-none footer-link-p ml-0"><span
-                                                    class="footer-additional">Phone:</span> +1 234 567 89 0 0</a></div>
-                                    </li>
-                                    <li class="list-item position-reletive addres-list icon-list1">
-                                        <div class="contact-number"><a href="tel:+4733378901"
-                                                class="text-decoration-none footer-link-p ml-0"><span
-                                                    class="footer-additional">Fax:</span> +1 ( 987 ) 654 321 9 9</a>
-                                        </div>
-                                    </li>
-                                    <li class="list-item position-reletive addres-list icon-list1">
-                                        <div class="contact-address"><a href="#"
-                                                class="text-decoration-none footer-link-p ml-0"><span
-                                                    class="footer-additional">Addres: </span> King Street Melbourne,
-                                                3000, Australia</a></div>
-                                    </li>
-                                </ul>
-                            </div>
+   <!-- Footer-Section -->
+<div class="footer-section">
+    <div class="about-right-icon">
+        <figure class="footer-icon">
+            <img src="{% static 'webapp/assets/images/footer-left.png' %}" alt="" class="img-fluid">
+        </figure>
+    </div>
+    <div class="footer-outer-margin" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="footer-content1" data-aos="flip-left">
+                        <figure>
+                            <a href="index.html"><img src="{% static 'webapp/assets/images/redlight-logo.png' %}" alt=""
+                                                      class="img-fluid"/></a>
+                        </figure>
+                        <p class="red-light-footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do
+                            eiusmod tempororem ipsum dolor sit am econsect ametconsectetetur adipiscing.</p>
+                        <div class="social-icons teams-social-icons">
+                            <ul class="list-unstyled">
+                                <li><a href="" class="text-decoration-none red-hover"><i
+                                        class="fa-brands fa-square-facebook  social-networks"></i></a></li>
+                                <li><a href="" class="text-decoration-none red-hover"><i
+                                        class="fa-brands fa-square-twitter social-networks"></i></a></li>
+                                <li><a href="" class="text-decoration-none red-hover"><i
+                                        class="fa-brands fa-linkedin social-networks"></i></a></li>
+                                <li><a href="" class="text-decoration-none red-hover"><i
+                                        class="fa-brands fa-square-pinterest social-networks"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer-bar text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-bar-content w-100 overflow-hidden">
-                        <p class="text-size-16 mb-0">
-                            Copyright ©2021 Redlight.com All Rights Reserved
-                        </p>
+
+                <!-- Колонка с ссылками на услуги -->
+                <div class="col-xl-2 col-lg-3 col-md-2 col-sm-12 d-lg-block d-none">
+                    <ul class="list-unstyled services-footer" data-aos="flip-left">
+                        <li class="list-item footer-margin-left">
+                            <h5 class="footer-link  footer-services-heading">
+                                Услуги
+                            </h5>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-caret-right"></i>
+                            <a href="{% url 'webapp:web_beck' %}" class="text-decoration-none footer-link-p">
+                                Веб-разработка и Backend-Решения
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-caret-right"></i>
+                            <a href="{% url 'webapp:bot' %}" class="text-decoration-none footer-link-p">
+                                Разработка и Интеграция Ботов
+                            </a>
+                        </li>
+                        <!-- Добавьте остальные услуги по аналогии -->
+                    </ul>
+                </div>
+
+                <!-- Колонка с ссылками на поддержку -->
+                <div class="col-lg-2 col-md-3 col-sm-12 d-md-block d-none">
+                    <ul class="list-unstyled support-footer" data-aos="flip-left">
+                        <li class="list-item footer-margin-left">
+                            <h5 class="footer-link footer-services-heading">
+                                Поддержка
+                            </h5>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-caret-right"></i>
+                            <a href="{% url 'webapp:contact' %}" class="text-decoration-none footer-link-p">
+                                Связаться с нами
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-caret-right"></i>
+                            <a href="{% url 'webapp:faq' %}" class="text-decoration-none footer-link-p">
+                                FAQ
+                            </a>
+                        </li>
+                        <!-- Добавьте остальные ссылки на поддержку по аналогии -->
+                    </ul>
+                </div>
+
+                <!-- Колонка с контактами -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="footer-list">
+                        <div class="icon-list-box1" data-aos="flip-left">
+                            <ul class="list-unstyled contact-us-ul">
+                                <li class="list-item">
+                                    <h5 class="footer-link footer-get-heading">
+                                        Свяжитесь с нами
+                                    </h5>
+                                </li>
+                                <li class="list-item position-reletive addres-list icon-list1">
+                                    <div class="number">
+                                        <a href="mailto:info@redlight.com" class="text-decoration-none footer-link-p ml-0">
+                                            <span class="footer-additional">Email: </span> MEGACRUD@redlight.com
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="list-item position-reletive addres-list icon-list1">
+                                    <div class="contact-number">
+                                        <a href="tel:375336212200" class="text-decoration-none footer-link-p ml-0">
+                                            <span class="footer-additional">Phone:</span> +375 33 621 22 00
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="list-item position-reletive addres-list icon-list1">
+                                    <div class="contact-number">
+                                        <a href="tel:+19876543219" class="text-decoration-none footer-link-p ml-0">
+                                            <span class="footer-additional">Fax:</span> +375 33 621 22 00
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="list-item position-reletive addres-list icon-list1">
+                                    <div class="contact-address">
+                                        <a href="#" class="text-decoration-none footer-link-p ml-0">
+                                            <span class="footer-additional">Адрес: </span> Новополоцк, 211442, Молодежная
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="footer-bar text-center">
+        <div class="container">
+            <div class="row">
+                <div class="footer-bar-content w-100 overflow-hidden">
+                    <p class="text-size-16 mb-0">
+                        © 2024 MEGA CRUD. Все права защищены.
 
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="{% static 'webapp/assets/js/animations.js' %}"></script>
