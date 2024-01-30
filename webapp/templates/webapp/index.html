@@ -234,12 +234,12 @@
                             <div class="services-section">
 
                                 <div class="images-service" data-aos="fade-up">
-                                    <figure class="mb-0"><img class="img-fluid" src="{{ service.image.url }}"
+                                    <figure class="mb-0"><img class="img-fluid img-fixed-size" src="{{ service.image.url }}"
                                                               alt="{{ service.title }}">
                                     </figure>
                                 </div>
                                 <h5 class="services-h5">{{ service.title }}</h5>
-                                <p class="services-p">{{ service.description | safe }}</p>
+                                <div class="services-p">{{ service.description | safe }}</div>
 
                             </div>
                         </div>
@@ -370,7 +370,7 @@
                 {% if post.media_type == 'IMG' %}
                 <div class="post-item">
                     <!-- Ваш код для отображения изображения -->
-                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    <img class="img-fixed-size-three" src="{{ post.image.url }}" alt="{{ post.title }}">
                 </div>
                 {% elif post.media_type == 'VID' %}
                 <div class="post-item">
@@ -391,7 +391,6 @@
                 </div>
                 {% endif %}
                 <!-- Остальные типы медиа можно добавить аналогично -->
-
                 <div class="post-item-description">
                     <h2><a href="#">{{ post.title }}</a></h2>
                     <p>{{ post.content|safe|truncatewords:20 }}</p>
