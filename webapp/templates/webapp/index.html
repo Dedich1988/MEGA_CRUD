@@ -368,29 +368,52 @@
             <div class="col-xl-4 col-lg-4">
                 <!-- В зависимости от типа медиа, отображаем различный контент -->
                 {% if post.media_type == 'IMG' %}
-                <div class="post-item">
-                    <!-- Ваш код для отображения изображения -->
-                    <img class="img-fixed-size-three" src="{{ post.image.url }}" alt="{{ post.title }}">
-                </div>
+                    <div class="post-item">
+                        <!-- Ваш код для отображения изображения -->
+                        <img class="img-fixed-size-three" src="{{ post.image.url }}" alt="{{ post.title }}">
+                    </div>
                 {% elif post.media_type == 'VID' %}
-                <div class="post-item">
-                    <!-- Ваш код для отображения видео -->
-                    <!-- Пример для видео файла -->
-                    {% if post.video_file %}
-                        <div class="blog-video">
-                            <video width="300" height="150" controls>
-                                <source src="{{ post.video_file.url }}" type="video/mp4">
-                                Ваш браузер не поддерживает видео тег.
-                            </video>
-                        </div>
-                    {% endif %}
-                    <!-- Пример для внешнего видео URL -->
-                    {% if post.video_url %}
-                    <iframe src="{{ post.video_url }}"></iframe>
-                    {% endif %}
-                </div>
+                    <div class="post-item">
+                        <!-- Ваш код для отображения видео -->
+                        <!-- Пример для видео файла -->
+                        {% if post.video_file %}
+                            <div class="blog-video">
+                                <video width="300" height="150" controls>
+                                    <source src="{{ post.video_file.url }}" type="video/mp4">
+                                    Ваш браузер не поддерживает видео тег.
+                                </video>
+                            </div>
+                        {% endif %}
+                        <!-- Пример для внешнего видео URL -->
+                        {% if post.video_url %}
+                            <iframe src="{{ post.video_url }}"></iframe>
+                        {% endif %}
+                    </div>
                 {% endif %}
-                <!-- Остальные типы медиа можно добавить аналогично -->
+                {% if post.media_type == 'AUD' %}
+                    <div class="post-item">
+                        {% if post.audio_file %}
+                            <audio controls>
+                                <source src="{{ post.audio_file.url }}" type="audio/mpeg">
+                                Ваш браузер не поддерживает аудио тег.
+                            </audio>
+                        {% endif %}
+                        {% if post.audio_url %}
+                            <audio controls>
+                                <source src="{{ post.audio_url }}" type="audio/mpeg">
+                                Ваш браузер не поддерживает аудио тег.
+                            </audio>
+                        {% endif %}
+                    </div>
+                {% elif post.media_type == 'IVA' %}
+                    <div class="post-item">
+                        <!-- Ваш код для отображения изображения с аудио -->
+                    </div>
+                {% elif post.media_type == 'NON' %}
+                    <div class="post-item">
+                        <!-- Ваш код для отображения поста без медиа -->
+                    </div>
+                {% endif %}
                 <div class="post-item-description">
                     <h2><a href="#">{{ post.title }}</a></h2>
                     <p>{{ post.content|safe|truncatewords:20 }}</p>
