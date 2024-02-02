@@ -821,6 +821,14 @@ a {
     background-color: #FFFFFF;
     color: #FF0000;
 }
+
+.portfolio-image {
+    width: 360px;
+    height: 240px;
+
+
+}
+
 /* about-us-section-start */
 .about-us-section-start p {
   color: var(--e-global-color-grey-icons);

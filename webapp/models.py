@@ -100,7 +100,8 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
-from django.db import models
+
+
 
 class PortfolioProject(models.Model):
     title = models.CharField(max_length=200)
@@ -109,5 +110,31 @@ class PortfolioProject(models.Model):
     completed_date = models.DateField()
     image = models.ImageField(upload_to='portfolio_images/')
 
-    def __str__(self):
-        return self.title
+    def save(self, *args, **kwargs):
+        # Вызываем оригинальный метод save
+        super().save(*args, **kwargs)
+
+        # Проверяем, есть ли изображение
+        if self.image:
+            # Открываем изображение с помощью Pillow
+            img = Image.open(self.image.path)
+
+            # Устанавливаем новый размер
+            new_size = (350, 263)
+            img = img.resize(new_size)
+
+            # Перезаписываем изображение
+            buffer = BytesIO()
+            img.save(buffer, format='JPEG')
+
+            # Сохраняем перезаписанное изображение
+            file_name = f"{self.image.name.split('.')[0]}_resized.jpg"
+            file_content = ContentFile(buffer.getvalue())
+            self.image.save(file_name, file_content, save=False)
+
+            # Сохраняем модель с обновленным изображением
+            super().save(*args, **kwargs)
+
+
+def __str__(self):
+    return self.title

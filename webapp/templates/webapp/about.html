@@ -20,7 +20,8 @@
                             <img src="{{ project.image.url }}" alt="{{ project.title }}">
                         </div>
                         <h4>{{ project.title }}</h4>
-                        <p>{{ project.description }}</p>
+                        <p>{{ project.description | slice:":150" | safe }}</p>
+
                         <a href="{% url 'webapp:portfolio_detail' project.id %}" class="text-decoration-none">Подробнее <span class="forword-arrow"><i class="fa fa-angle-right"></i></span></a>
                     </div>
                 </div>
@@ -50,17 +51,17 @@
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1"></div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="cyber-content">
-                        <h3>Advanced <span class="cyber-text">Cyber Security</span> Provider</h3>
-                        <p class="security-services-p">Lorem ipsum dolor sit amet consectetuer adipiscing
-                            elitenean commo doligula eget dolorenean massa.In enim justo, rhoncus ut, imperdiet
-                            avene natis vitae justo nullam dictum felis eu pede mollis pretium Inte ger tincid
-                            unt cras dapibus</p>
-                        <p class="security-services-p cyber-p-margin-bottom">Vamus elementum semper nisi aenean
-                            vulputate eleife nd tellus onsec tet ueradip.</p>
-                        <div class="cyber-contact-btn">
-                            <a href="contact.html" class="text-decoration-none">Contact Us</a>
-                        </div>
+                    <h3>Ведущие услуги <span class="web-development-text">веб-разработки</span></h3>
+                    <p class="security-services-p">Превратите ваши идеи в реальность с MEGA CRUD - вашим надежным
+                        партнером в сфере веб-разработки. Наша команда экспертов готова создать инновационные и удобные
+                        веб-сайты, соответствующие вашим уникальным потребностям. Мы специализируемся на создании
+                        динамичных веб-решений с использованием передовых технологий.</p>
+                    <p class="security-services-p web-development-p-margin-bottom">Будь то корпоративный сайт,
+                        интернет-магазин или индивидуальное веб-приложение, мы вас поддержим. В MEGA CRUD мы стремимся к
+                        совершенству, предоставляя высококачественные и масштабируемые решения, которые поднимут ваше
+                        онлайн-присутствие на новый уровень.</p>
+                    <div class="web-development-contact-btn">
+                        <a href="contact.html" class="text-decoration-none">Свяжитесь с нами</a>
                     </div>
                 </div>
             </div>
