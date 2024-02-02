@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.db import IntegrityError  # Импорт для обработки исключений
 from .models import *
 from blog.models import BlogPost
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def send_confirmation_email(email):
     # Функция для отправки подтверждающего письма
@@ -52,10 +53,27 @@ def index(request):
 
 
 def about(request):
-    """
-    Renders the about page.
-    """
-    return render(request, 'webapp/about.html')
+
+
+    projects = PortfolioProject.objects.all()
+
+    # Разбиваем проекты на страницы (по 9 проектов на страницу)
+    paginator = Paginator(projects, 9)
+    page = request.GET.get('page', 1)
+
+    try:
+        portfolio = paginator.page(page)
+    except PageNotAnInteger:
+        portfolio = paginator.page(1)
+    except EmptyPage:
+        portfolio = paginator.page(paginator.num_pages)
+
+    # Создаем диапазон страниц для пагинации
+    page_range = paginator.page_range
+
+    # Текущая страница
+    current_page = int(page)
+    return render(request, 'webapp/about.html', {'portfolio': portfolio, 'page_range': page_range, 'current_page': current_page})
 
 def services(request):
     """
@@ -110,3 +128,9 @@ def contact(request):
     TODO: Add logic for testimonials page processing.
     """
     return render(request, 'webapp/contact.html')
+
+def portfolio_detail(request, project_id):
+    # Получаем объект проекта по его ID или возвращаем 404, если проект не найден
+    project = get_object_or_404(PortfolioProject, id=project_id)
+
+    return render(request, 'webapp/portfolio_detail.html', {'project': project})

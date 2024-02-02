@@ -12,7 +12,7 @@ class MyModelAdmin(admin.ModelAdmin):
 
 
 
-
+admin.site.register(PortfolioProject, MyModelAdmin)
 
 # Регистрация модели PricingPlan с использованием MyModelAdmin
 admin.site.register(PricingPlan, MyModelAdmin)

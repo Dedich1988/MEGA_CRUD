@@ -8,7 +8,7 @@ app_name = 'webapp'
 
 urlpatterns = [
     path('', index, name='home'),
-    path('about/', about, name='about'),
+
     path('services/', services, name='services'),
     path('faq/', faq, name='faq'),
     path('team/', team, name='team'),
@@ -16,6 +16,10 @@ urlpatterns = [
     path('bot/', bot, name='bot'),
     path('pars/', pars, name='pars'),
     path('contact', contact, name='contact'),
+
+    path('about/', about, name='about'),
+    path('portfolio/<int:project_id>/', portfolio_detail, name='portfolio_detail'),
+    # Создайте это представление, чтобы показывать детали проекта
 
     path('pricing/', pricing, name='pricing'),
 

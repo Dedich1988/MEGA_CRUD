@@ -1,0 +1,26 @@
+
+<!-- PORTFOLIO_DETAIL_SECTION -->
+<section class="portfolio-detail-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">{{ project.title }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="portfolio-detail-image">
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="portfolio-detail-content">
+                    <p>{{ project.description }}</p>
+                    <p><strong>Категория:</strong> {{ project.category }}</p>
+                    <p><strong>Дата завершения:</strong> {{ project.completed_date }}</p>
+                    <!-- Добавьте другие поля, которые у вас есть в модели -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

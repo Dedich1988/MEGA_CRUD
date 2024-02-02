@@ -99,3 +99,15 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
+
+from django.db import models
+
+class PortfolioProject(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    category = models.CharField(max_length=100)
+    completed_date = models.DateField()
+    image = models.ImageField(upload_to='portfolio_images/')
+
+    def __str__(self):
+        return self.title

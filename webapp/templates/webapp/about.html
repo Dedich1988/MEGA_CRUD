@@ -3,68 +3,40 @@
 
 {% block content %}
 
-    <!-- ABOUT-US_SECTION -->
-    <section class="about-us-section-start aboutus-page">
-        <div class="about-right-icon position-relative">
-            <figure class="whyus-icon"><img src="{% static 'webapp/assets/images/about-us-section-right-icon.png' %}"
-                                            alt=""
-                                            class="img-fluid">
-            </figure>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-center">Why Choose Us</h3>
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetuer adipiscing elitenean commodo
-                        ligula eget dolorenean massa.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}"
-                                                      alt="">
-                            </figure>
-                        </div>
-                        <h4>Security Services</h4>
-                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate
-                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>
-                        <a href="about-us.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img
-                                    src="{% static 'webapp/assets/images/about-round-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h4>Data Privacy</h4>
-                        <p class="security-services-p">Lorem ipsum dolor sit ametconsectetuer dipiscing
-                            elitaenean commodo ligula eget dolor aenean massa.</p>
-                        <a href="about-us.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon3.png' %}"
-                                                      alt="">
-                            </figure>
-                        </div>
-                        <h4>Industry Certified</h4>
-                        <p class="security-services-p">Integer tincidunt Cras dapibus bivamus ele mentum semper
-                            nisienean vulputate eleife nd tellusenean leo ligula.</p>
-                        <a href="about-us.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i
-                                class="fa fa-angle-right"></i></span></a>
-                    </div>
-                </div>
+<!-- PORTFOLIO_SECTION -->
+<section class="portfolio-section-start portfolio-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">Наше портфолио</h3>
+                <p class="text-center">Разглядите наши последние проекты и достижения.</p>
             </div>
         </div>
-    </section>
+        <div class="row">
+            {% for project in portfolio %}
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="portfolio-content" data-aos="fade-up">
+                        <div class="portfolio-image">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                        </div>
+                        <h4>{{ project.title }}</h4>
+                        <p>{{ project.description }}</p>
+                        <a href="{% url 'webapp:portfolio_detail' project.id %}" class="text-decoration-none">Подробнее <span class="forword-arrow"><i class="fa fa-angle-right"></i></span></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <span class="pagination-button">&laquo;</span>
+            {% for page_num in page_range %}
+                <span class="pagination-button{% if page_num == current_page %} active{% endif %}" data-page="{{ page_num }}">{{ page_num }}</span>
+            {% endfor %}
+            <span class="pagination-button">&raquo;</span>
+        </div>
+    </div>
+</section>
+
     <!-- CYBER-SECURITY-SECTION -->
     <section class="cyber-security-section overflow-hidden">
         <div class="container">
