@@ -67,62 +67,55 @@
             </div>
         </div>
     </section>
-    <!-- boxes-section -->
-    <div class="about-us-section-start cyber-boxes-section overflow-hidden">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon1.png' %}"
-                                                      alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">3325</span><span
-                                class="cyber-counter">+</span></h3>
-                        <h5 class="cyber-boxes-text">Global Projects</h5>
+   <!-- boxes-section -->
+<div class="about-us-section-start cyber-boxes-section overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="about-us-content" data-aos="fade-up">
+                    <div class="icons-rounded-box">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon1.png' %}" alt="">
+                        </figure>
                     </div>
+                    <h3 class="counetr-heading"><span class="counter">3325</span><span class="cyber-counter">+</span></h3>
+                    <h5 class="cyber-boxes-text">Глобальные Проекты</h5>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0 icon-color"><img
-                                    src="{% static 'webapp/assets/images/cyber-section-icon2.png' %}" alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">4579</span><span
-                                class="cyber-counter clients-protect">+</span>
-                        </h3>
-                        <h5 class="cyber-boxes-text">Clients Protect</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="about-us-content" data-aos="fade-up">
+                    <div class="icons-rounded-box">
+                        <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/cyber-section-icon2.png' %}" alt="">
+                        </figure>
                     </div>
+                    <h3 class="counetr-heading"><span class="counter">4579</span><span class="cyber-counter clients-protect">+</span>
+                    </h3>
+                    <h5 class="cyber-boxes-text">Защищенные Клиенты</h5>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon3.png' %}"
-                                                      alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">100</span><span
-                                class="cyber-counter cyber-percent">%</span></h3>
-                        <h5 class="cyber-boxes-text">Service Guarantee</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="about-us-content" data-aos="fade-up">
+                    <div class="icons-rounded-box">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon3.png' %}" alt="">
+                        </figure>
                     </div>
+                    <h3 class="counetr-heading"><span class="counter">100</span><span class="cyber-counter cyber-percent">%</span></h3>
+                    <h5 class="cyber-boxes-text">Гарантия Сервиса</h5>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="about-us-content" data-aos="fade-up">
-                        <div class="icons-rounded-box">
-                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon4.png' %}"
-                                                      alt="">
-                            </figure>
-                        </div>
-                        <h3 class="counetr-heading"><span class="counter">7845</span><span
-                                class="cyber-counter expert-team">+</span></h3>
-                        <h5 class="cyber-boxes-text">Experts Team</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="about-us-content" data-aos="fade-up">
+                    <div class="icons-rounded-box">
+                        <figure class="mb-0"><img src="{% static 'webapp/assets/images/cyber-section-icon4.png' %}" alt="">
+                        </figure>
                     </div>
+                    <h3 class="counetr-heading"><span class="counter">7845</span><span class="cyber-counter expert-team">+</span></h3>
+                    <h5 class="cyber-boxes-text">Экспертная Команда</h5>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Clients_section -->
     <section class="clients-section clients-section-right-img1">
         <div class="position-relative">
@@ -191,48 +184,7 @@
         </div>
     </section>
 
-    <!-- ABOUT-TEAM-SECTION -->
-    <section class="about-us-section-start about-teams-section about-page-teams">
-        <div class="container">
-            <div class="row">
-                {% for developer in developers %}
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                        <div class="about-teams-inner">
-                            <div class="about-team">
-                                <div class="icons-rounded-box">
-                                    <figure class="mb-0">
-                                        <img src="{{ developer.image.url }}" alt="" class="img-fluid teams-img-border">
-                                    </figure>
-                                </div>
-                            </div>
-                            <h4 class="about-team-members-h4">{{ developer.name }}</h4>
-                            <p class="about-team-title">{{ developer.title }}</p>
-                            <p class="teams-section-p">{{ developer.bio }}</p>
-                            <div class="social-icons teams-social-icons">
-                                <ul class="list-unstyled">
-                                    {% if developer.facebook_url %}
-                                        <li><a href="{{ developer.facebook_url }}" class="text-decoration-none"><i
-                                                class="fa-brands fa-square-facebook social-networks"></i>
-                                        </a>
-                                        </li>
-                                    {% endif %}
-                                    {% if developer.twitter_url %}
-                                        <li><a href="{{ developer.twitter_url }}" class="text-decoration-none"><i
-                                                class="fa-brands fa-square-twitter social-networks"></i></a></li>
-                                    {% endif %}
-                                    {% if developer.linkedin_url %}
-                                        <li><a href="{{ developer.linkedin_url }}" class="text-decoration-none"><i
-                                                class="fa-brands fa-linkedin social-networks"></i></a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
 
 
 
