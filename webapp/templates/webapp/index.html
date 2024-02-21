@@ -90,51 +90,8 @@
 
 
 
-    <!-- Ваша Карьера в IT Начинается Здесь! -->
-    <section class="about-us-section-start">
-        <div class="about-right-icon position-relative" data-aos="fade-right"
-             data-aos-offset="300"
-             data-aos-easing="ease-in-sine">
-            <figure class="whyus-icon"><img src="{% static 'webapp/assets/images/about-us-section-right-icon.png' %}"
-                                            alt=""
-                                            class="img-fluid">
-            </figure>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-center" data-aos="fade-up"
-                        data-aos-anchor-placement="top-bottom">Ваша Карьера в IT Начинается Здесь!</h3>
-                    <p class="text-center">Независимо от того, на каком этапе карьеры вы находитесь, наши курсы
-                        предоставят вам знания и навыки, необходимые для успеха в динамичной индустрии IT.
-                    </p>
-                </div>
-            </div>
+{% include 'webapp/pricing_plan_section.html' %}
 
-            <!--PRICING-PLAN_SECTION -->
-            <section class="about-us-section-start pricing-plan-section pricing-page overflow-hidden">
-                <div class="container">
-                    <div class="row">
-                        {% for plan in plans %}
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="about-us-content" data-aos="fade-up">
-                                    <div class="icons-rounded-box">
-                                        <figure class="mb-0"><img src="{{ plan.image.url }}" alt="{{ plan.title }}">
-                                        </figure>
-                                    </div>
-                                    <h4 class="pricing-plan-h4">{{ plan.title }}</h4>
-                                    <h3 class="pricing-plan-color">${{ plan.price }}<span
-                                            class="pricing-free-text">{{ plan.price_description }}</span></h3>
-                                    <p class="pricing-plan-color-p">{{ plan.description|truncatechars:125|safe }}</p>
-                                    <div class="order-now-btn">
-                                        <a href="pricing.html" class="text-decoration-none ">Order Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
             {#            <div class="row">#}
             {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
             {#                    <div class="about-us-content" data-aos="fade-up"#}
