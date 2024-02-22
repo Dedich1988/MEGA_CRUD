@@ -55,7 +55,8 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="about-section-form">
-                                            <form method="POST" action="contact-form.php">
+                                            <form method="POST" action="{% url 'webapp:contact2' %}">
+                                                {% csrf_token %}
                                                 <div class="form-group contact-form-margin">
                                                     <input type="text" class="form-control input-text"
                                                         id="validationCustom01" placeholder="Your Name" required="" name="name">
@@ -72,7 +73,7 @@
                                                     <textarea name="comments" id="message" cols="10" rows="10" class="form-control" placeholder="Your Message"></textarea>
                                                 </div>
                                                 <div class="contact-section-btn text-center">
-                                                    <button type="submit" class="btn btn-primary hover-effect">Send Message</button>
+                                                    <button type="submit" class="btn btn-primary hover-effect">Отправить</button>
                                                 </div>
                                             </form>
                                         </div>

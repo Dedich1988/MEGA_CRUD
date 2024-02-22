@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.db import IntegrityError
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .forms import SubscribeForm
+from .forms import SubscribeForm, ContactForm
 from .models import *
 from blog.models import BlogPost
 
@@ -121,3 +121,21 @@ def portfolio_detail(request, project_id):
     project = get_object_or_404(PortfolioProject, id=project_id)
 
     return render(request, 'webapp/portfolio_detail.html', {'project': project})
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact_message = ContactMessage(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                message=form.cleaned_data['comments']
+
+            )
+            # Сохранение экземпляра модели в базу данных
+            contact_message.save()
+            return redirect('home')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})

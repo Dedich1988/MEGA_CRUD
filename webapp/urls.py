@@ -15,7 +15,9 @@ urlpatterns = [
     path('web_beck/', web_beck, name='web_beck'),
     path('bot/', bot, name='bot'),
     path('pars/', pars, name='pars'),
-    path('contact', contact, name='contact'),
+    path('contact/', contact, name='contact'),
+    path('contact/', contact_view, name='contact2'),
+
 
     path('about/', about, name='about'),
     path('portfolio/<int:project_id>/', portfolio_detail, name='portfolio_detail'),
