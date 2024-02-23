@@ -10,3 +10,8 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=200, required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
+    def clean_message(self):
+        message = self.cleaned_data['message']
+        if len(message) < 10:
+            raise forms.ValidationError("Сообщение должно содержать не менее 10 символов.")
+        return message

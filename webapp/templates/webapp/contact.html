@@ -51,31 +51,37 @@
                                             <span class="contact-parah">support@redlight.com</span>
                                         </div></li>
                                         </ul>
-                                       
+
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="about-section-form">
-                                            <form method="POST" action="{% url 'webapp:contact2' %}">
+                                            <form method="post" action="{% url 'webapp:contact' %}">
                                                 {% csrf_token %}
                                                 <div class="form-group contact-form-margin">
-                                                    <input type="text" class="form-control input-text"
-                                                        id="validationCustom01" placeholder="Your Name" required="" name="name">
+                                                    <input type="text" class="form-control input-text" id="name"
+                                                           placeholder="Your Name" required="" name="name">
                                                 </div>
                                                 <div class="form-group contact-form-margin">
-                                                    <input type="text" class="form-control input-text"
-                                                        id="validationCustom02" placeholder="Your Email" required="" name="email">
+                                                    <input type="email" class="form-control input-text" id="email"
+                                                           placeholder="Your Email" required="" name="email">
                                                 </div>
                                                 <div class="form-group contact-form-margin">
-                                                    <input type="text" class="form-control input-text"
-                                                        id="validationCustom03" placeholder="Subject" required="" name="subject">
+                                                    <input type="text" class="form-control input-text" id="subject"
+                                                           placeholder="Subject" required="" name="subject">
                                                 </div>
                                                 <div class="form-group contact-form-margin-text-area">
-                                                    <textarea name="comments" id="message" cols="10" rows="10" class="form-control" placeholder="Your Message"></textarea>
+                                                    <textarea name="message" id="message" cols="10" rows="10"
+                                                              class="form-control"
+                                                              placeholder="Your Message"></textarea>
                                                 </div>
                                                 <div class="contact-section-btn text-center">
-                                                    <button type="submit" class="btn btn-primary hover-effect">Отправить</button>
+                                                    <button type="submit" class="btn btn-primary hover-effect">
+                                                        Отправить
+                                                    </button>
                                                 </div>
                                             </form>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +91,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 <!-- MAP-Section -->
 <div class="map-section overflow-hidden">
 <div class="container">

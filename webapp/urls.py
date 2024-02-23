@@ -16,7 +16,7 @@ urlpatterns = [
     path('bot/', bot, name='bot'),
     path('pars/', pars, name='pars'),
     path('contact/', contact, name='contact'),
-    path('contact/', contact_view, name='contact2'),
+
 
 
     path('about/', about, name='about'),

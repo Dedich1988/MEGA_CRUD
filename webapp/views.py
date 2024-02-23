@@ -114,7 +114,20 @@ def contact(request):
     Renders the pricing page.
     TODO: Add logic for testimonials page processing.
     """
-    return render(request, 'webapp/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            print("Форма валидна")
+            print("Имя:", form.cleaned_data['name'])
+            print("Email:", form.cleaned_data['email'])
+            print("Тема:", form.cleaned_data['subject'])
+            print("Сообщение:", form.cleaned_data['message'])
+        else:
+            print("Форма недействительна. Ошибки:", form.errors)
+    else:
+        form = ContactForm()
+
+    return render(request, 'webapp/contact.html', {'form': form})
 
 def portfolio_detail(request, project_id):
     # Получаем объект проекта по его ID или возвращаем 404, если проект не найден
@@ -122,20 +135,6 @@ def portfolio_detail(request, project_id):
 
     return render(request, 'webapp/portfolio_detail.html', {'project': project})
 
-def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            contact_message = ContactMessage(
-                name=form.cleaned_data['name'],
-                email=form.cleaned_data['email'],
-                subject=form.cleaned_data['subject'],
-                message=form.cleaned_data['comments']
 
-            )
-            # Сохранение экземпляра модели в базу данных
-            contact_message.save()
-            return redirect('home')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+
+
