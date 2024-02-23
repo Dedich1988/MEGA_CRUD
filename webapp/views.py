@@ -117,11 +117,22 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            # Если форма валидна, создаем объект ContactMessage и сохраняем его в базе данных
+            contact_message = ContactMessage(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                message=form.cleaned_data['message']
+            )
+            contact_message.save()
+
             print("Форма валидна")
             print("Имя:", form.cleaned_data['name'])
             print("Email:", form.cleaned_data['email'])
             print("Тема:", form.cleaned_data['subject'])
             print("Сообщение:", form.cleaned_data['message'])
+
+            return render(request, 'webapp/index.html', {'form': form})
         else:
             print("Форма недействительна. Ошибки:", form.errors)
     else:
