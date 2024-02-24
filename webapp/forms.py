@@ -12,6 +12,6 @@ class ContactForm(forms.Form):
 
     def clean_message(self):
         message = self.cleaned_data['message']
-        if len(message) < 10:
+        if len(message) < 5:
             raise forms.ValidationError("Сообщение должно содержать не менее 10 символов.")
         return message
