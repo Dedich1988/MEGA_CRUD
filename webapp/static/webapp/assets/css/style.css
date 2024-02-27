@@ -79,6 +79,7 @@ Project: RedLight
 }
 
 
+
 body {
   font-family: "Jost", sans-serif !important;
 }
@@ -183,7 +184,7 @@ a {
   background-image: linear-gradient( 109deg, var(--e-global-color-dark-marron) 17%, var(--e-global-color-dark-icons-background) 46% );
 }
 .main-header .navbar-brand {
-  margin-left:0px;
+  margin-left:0;
   padding-bottom: 8px;
 }
 .logo-text {
@@ -203,7 +204,7 @@ a {
   padding: 28px 0 0 0;
 }
 .home-banner-text {
-  padding: 0px 0 193px 0;
+  padding: 0 0 193px 0;
 }
 /* aboutus page */
 .about-banner-text{
@@ -251,7 +252,7 @@ a {
     line-height: 30px;
     color: var(--e-global-color-grey-icons);
     word-spacing: -1px;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 .about-us-section-page .about-us-list i{
   color:var(--e-global-color-btn-red);
@@ -261,10 +262,10 @@ a {
 }
 .about-us-section-page .discover-btn-banner .play-button {
   padding: 15px 33px;
-  margin-left: 8px;
+  margin-left: 9px; /* Оставляем только одно свойство margin-left */
   background: transparent !important;
   border: 1px solid var(--e-global-color-grey-cyber-box);
-  margin-left: 9px;
+
 }
 .about-us-section-page .discover-btn-banner .play-button:hover {
   background:var(--e-global-color-btn-red)!important;
@@ -291,11 +292,11 @@ a {
   transition: transform ease 300ms;
 }
 .aboutus-page{
-  padding: 110px 0px 0 !important;
+  padding: 110px 0 0 !important;
 }
 /* clients-section */
 .clients-section{
-  padding: 109px 0 0px;
+  padding: 109px 0 0;
   background: var(--e-global-color-dark-icons-background);
 }
 .services-clients-section{
@@ -323,7 +324,7 @@ a {
   margin-right: 20px;
 }
 .clients-section .clients-outer-box .clients-sectionp2{
-  padding: 0 0px 0 2px;
+  padding: 0 0 0 2px;
   margin-bottom: 28px;
 }
 .clients-section .clients-outer-box .icon-figure-quotes{
@@ -502,7 +503,7 @@ a {
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
-  word-spacing:0px;
+  word-spacing:0;
   margin-bottom: 41px;
 }
 .banner-btn a {
@@ -588,14 +589,14 @@ a {
 }
 
 .artificial-text {
-  letter-spacing: 0px;
+  letter-spacing: 0;
   margin-bottom: 10px;
 }
 .banner-img-content {
-  padding: 0px 0px 0 0px;
+  padding: 0 0 0 0;
 }
 .banner-container-box .social-icons{
-  padding: 0px 0px 0 39px;
+  padding: 0 0 0 39px;
 }
 .home-banner-text h1 {
   margin-bottom: 18px;
@@ -637,7 +638,7 @@ a {
   margin: 0 !important;
 }
 .drop-down-content li a {
-  padding: 10px 0px 10px 14px !important;
+  padding: 10px 0 10px 14px !important;
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
@@ -679,7 +680,7 @@ a {
   background:var(--e-global-color-black-cards-bacground);
   color: var(--e-global-color-white);
   border-radius: 100px;
-  line-height: 48px !important;
+  line-height: 48px !important; /* Добавляем !important */
   text-align: center;
   transition: all ease-in-out 0.3s;
   margin-right: -19px;
@@ -763,6 +764,26 @@ a {
   padding-left: 0;
   padding-right: 0;
 }
+
+.video-iframe {
+    width: 338px; /* Установите здесь размер квадрата */
+    height: 252px; /* Установите здесь размер квадрата */
+}
+.video-container {
+    position: relative;
+    width: 338px;
+    height: 252px;
+    margin-bottom: 20px; /* Подберите подходящее значение для отступа между видео и остальным контентом */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .cards-section .outer-card1{
   margin-left: -21px;
 }

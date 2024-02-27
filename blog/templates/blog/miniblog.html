@@ -21,10 +21,8 @@
                                   </div>
                               {% elif post.media_type == "YTV" %}
                                   <div class="post-video">
-                                      <div class="fluid-width-video-wrapper">
-                                          <iframe width="560" height="376" src="{{ post.video_url }}"></iframe>
-
-
+                                      <div class="video-container">
+                                          <iframe class="video-iframe" src="{{ post.video_url }}"></iframe>
                                       </div>
                                       <span class="post-meta-category"><a href="">{{ post.category }}</a></span>
                                       <!--post-video-->
@@ -43,7 +41,7 @@
                       <a href="#">{{ post.title}} </a>
                     </h2>
                     <p>
-                        {{ post.content| safe | truncatechars:178}}
+                        {{ post.content| safe | truncatechars:172}}
                     </p>
                     <a href="{{ post.read_more }}" class="item-link text-decoration-none">Read More <i
                         class="fa fa-arrow-right"></i></a>
