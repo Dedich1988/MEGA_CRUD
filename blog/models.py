@@ -95,7 +95,7 @@ class BlogPost(models.Model):
         ('IMG', 'Image'),
         ('VID', 'Video'),
         ('AUD', 'Audio'),
-        ('IVA', 'Image with Audio'),
+        ('YTV', 'Youtube video'),
         ('NON', 'None'),
     )
 
@@ -104,6 +104,7 @@ class BlogPost(models.Model):
     post_date = models.DateTimeField()
     comments_count = models.IntegerField(default=0)
     category = models.CharField(max_length=100)
+    read_more = models.CharField(max_length=200)
     media_type = models.CharField(max_length=3, choices=MEDIA_CHOICES, default='NON')
 
     # Media fields
@@ -122,8 +123,8 @@ class BlogPost(models.Model):
             img = Image.open(self.image.path)
 
             # Изменение размера изображения
-            if img.height > 150 or img.width > 300:
-                output_size = (300, 150)
+            if img.height > 350 or img.width > 495:
+                output_size = (495, 350)
                 img.thumbnail(output_size)
 
                 # Сохраняем измененное изображение

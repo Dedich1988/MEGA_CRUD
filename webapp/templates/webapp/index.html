@@ -92,52 +92,7 @@
 
 {% include 'webapp/pricing_plan_section.html' %}
 
-            {#            <div class="row">#}
-            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-            {#                    <div class="about-us-content" data-aos="fade-up"#}
-            {#                    data-aos-anchor-placement="bottom-bottom">#}
-            {#                        <div class="icons-rounded-box">#}
-            {#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon1.png' %}" alt="">#}
-            {#                            </figure>#}
-            {#                        </div>#}
-            {#                        <h4>Security Services</h4>#}
-            {#                        <p class="security-services-p">Donec pede justo, fringilla vel, aliquet nec vulputate#}
-            {#                            eget, arcu. In enim justo, rhoncus ut imperdiet.</p>#}
-            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-            {#                                    class="fa fa-angle-right"></i></span></a>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-            {#                    <div class="about-us-content" data-aos="fade-up"#}
-            {#                    data-aos-anchor-placement="bottom-bottom">#}
-            {#                        <div class="icons-rounded-box">#}
-            {#                            <figure class="mb-0 icon-color"><img src="{% static 'webapp/assets/images/about-round-icon2.png' %}" alt="">#}
-            {#                            </figure>#}
-            {#                        </div>#}
-            {#                        <h4>Data Privacy</h4>#}
-            {#                        <p class="security-services-p">Lorem ipsum dolor sit ametconsectetuer dipiscing#}
-            {#                            elitaenean commodo ligula eget dolor aenean massa.</p>#}
-            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-            {#                                    class="fa fa-angle-right"></i></span></a>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#                <div class="col-lg-4 col-md-4 col-sm-12">#}
-            {#                    <div class="about-us-content" data-aos="fade-up"#}
-            {#                    data-aos-anchor-placement="bottom-bottom">#}
-            {#                        <div class="icons-rounded-box">#}
-            {#                            <figure class="mb-0"><img src="{% static 'webapp/assets/images/about-round-icon3.png' %}" alt="">#}
-            {#                            </figure>#}
-            {#                        </div>#}
-            {#                        <h4>Industry Certified</h4>#}
-            {#                        <p class="security-services-p">Integer tincidunt Cras dapibus bivamus ele mentum semper#}
-            {#                            nisienean vulputate eleife nd tellusenean leo ligula.</p>#}
-            {#                        <a href="about.html" class="text-decoration-none ">Learn More <span class="forword-arrow"><i#}
-            {#                                    class="fa fa-angle-right"></i></span></a>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </div>#}
-        </div>
-    </section>
+
 
 
 
@@ -310,78 +265,24 @@
     </section>
 
   <!-- Секция с последними постами блога-->
-<section class="latest-posts">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-md-0 mb-4  text-center">
-                <div class="about-banner-text" data-aos="fade-up">
-                    <h1 class="text-white about-h1" data-aos="zoom-out-left">MEGA CRUD Insights</h1>
-                    <p class="text-white banner-paragraph" data-aos="zoom-out-right">Исследуем границы возможного в IT. Инсайды, анализы и мысли ведущих разработчиков MEGA CRUD.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            {% for post in latest_posts %}
-            <div class="col-xl-4 col-lg-4">
-                <!-- В зависимости от типа медиа, отображаем различный контент -->
-                {% if post.media_type == 'IMG' %}
-                    <div class="post-item">
-                        <!-- Ваш код для отображения изображения -->
-                        <img class="img-fixed-size-three" src="{{ post.image.url }}" alt="{{ post.title }}">
-                    </div>
-                {% elif post.media_type == 'VID' %}
-                    <div class="post-item">
-                        <!-- Ваш код для отображения видео -->
-                        <!-- Пример для видео файла -->
-                        {% if post.video_file %}
-                            <div class="blog-video">
-                                <video width="300" height="150" controls>
-                                    <source src="{{ post.video_file.url }}" type="video/mp4">
-                                    Ваш браузер не поддерживает видео тег.
-                                </video>
-                            </div>
-                        {% endif %}
-                        <!-- Пример для внешнего видео URL -->
-                        {% if post.video_url %}
-                            <iframe src="{{ post.video_url }}"></iframe>
-                        {% endif %}
-                    </div>
-                {% endif %}
-                {% if post.media_type == 'AUD' %}
-                    <div class="post-item">
-                        {% if post.audio_file %}
-                            <audio controls>
-                                <source src="{{ post.audio_file.url }}" type="audio/mpeg">
-                                Ваш браузер не поддерживает аудио тег.
-                            </audio>
-                        {% endif %}
-                        {% if post.audio_url %}
-                            <audio controls>
-                                <source src="{{ post.audio_url }}" type="audio/mpeg">
-                                Ваш браузер не поддерживает аудио тег.
-                            </audio>
-                        {% endif %}
-                    </div>
-                {% elif post.media_type == 'IVA' %}
-                    <div class="post-item">
-                        <!-- Ваш код для отображения изображения с аудио -->
-                    </div>
-                {% elif post.media_type == 'NON' %}
-                    <div class="post-item">
-                        <!-- Ваш код для отображения поста без медиа -->
-                    </div>
-                {% endif %}
-                <div class="post-item-description">
-                    <h2><a href="#">{{ post.title }}</a></h2>
-                    <p>{{ post.content|safe|truncatewords:20 }}</p>
 
-                    <!-- Другие элементы поста -->
+
+    <section class="latest-posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 mb-md-0 mb-4  text-center">
+                    <div class="about-banner-text" data-aos="fade-up">
+                        <h1 class="text-white about-h1" data-aos="zoom-out-left">MEGA CRUD Insights</h1>
+                        <p class="text-white banner-paragraph" data-aos="zoom-out-right">Исследуем границы возможного в
+                            IT. Инсайды, анализы и мысли ведущих разработчиков MEGA CRUD.</p>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
+
+            {% include 'blog/miniblog.html' %}
+
         </div>
-    </div>
-</section>
+    </section>
 
 
 
