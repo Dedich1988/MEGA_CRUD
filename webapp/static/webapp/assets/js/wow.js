@@ -50,12 +50,13 @@
   function extend(custom, defaults) {
     for (var key in defaults) {
       if (custom[key] == null) {
-        var value = defaults[key];
-        custom[key] = value;
+        // Удалена лишняя переменная value
+        custom[key] = defaults[key];
       }
     }
     return custom;
   }
+
 
   function isMobile(agent) {
     return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent)
@@ -87,12 +88,13 @@
     if (elem.dispatchEvent != null) {
       // W3C DOM
       elem.dispatchEvent(event);
-    } else if (event in (elem != null)) {
+    } else if (elem != null && event in elem) {
       elem[event]();
-    } else if ('on' + event in (elem != null)) {
+    } else if (elem != null && 'on' + event in elem) {
       elem['on' + event]();
     }
   }
+
 
   function addEvent(elem, event, fn) {
     if (elem.addEventListener != null) {
@@ -167,7 +169,6 @@
     return WeakMap;
   }();
 
-  // Dummy MutationObserver, to avoid raising exceptions.
   var MutationObserver = window.MutationObserver || window.WebkitMutationObserver || window.MozMutationObserver || (_temp = _class = function () {
     function MutationObserver() {
       _classCallCheck(this, MutationObserver);
@@ -180,31 +181,14 @@
 
     _createClass(MutationObserver, [{
       key: 'observe',
-      value: function observe() {}
+      value: function observe() {
+      }
     }]);
 
     return MutationObserver;
-  }(), _class.notSupported = true, _temp);
+  }(), _temp);
 
-  // getComputedStyle shim, from http://stackoverflow.com/a/21797294
-  var getComputedStyle = window.getComputedStyle || function getComputedStyle(el) {
-    var getComputedStyleRX = /(\-([a-z]){1})/g;
-    return {
-      getPropertyValue: function getPropertyValue(prop) {
-        if (prop === 'float') {
-          prop = 'styleFloat';
-        }
-        if (getComputedStyleRX.test(prop)) {
-          prop.replace(getComputedStyleRX, function (_, _char) {
-            return _char.toUpperCase();
-          });
-        }
-        var currentStyle = el.currentStyle;
-
-        return (currentStyle != null ? currentStyle[prop] : void 0) || null;
-      }
-    };
-  };
+  _temp.notSupported = true;
 
   var WOW = function () {
     function WOW() {
