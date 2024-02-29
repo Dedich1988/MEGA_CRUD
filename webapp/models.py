@@ -5,12 +5,14 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 
+
 # Подписчики
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
 
     def __str__(self):
         return self.email
+
 
 # Прайс-планы главная страница
 class PricingPlan(models.Model):
@@ -24,6 +26,7 @@ class PricingPlan(models.Model):
     def __str__(self):
         return self.title
 
+
 # Баннер на base.html
 class Banner(models.Model):
     title = models.CharField(max_length=100)
@@ -33,6 +36,7 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+
 
 # Портфолио мини на главную
 class Portfolio(models.Model):
@@ -44,7 +48,7 @@ class Portfolio(models.Model):
         return self.alt_text or "Portfolio Item"
 
 
-# Портфолио мини на главную
+# Разработчики
 class Developer(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
@@ -58,13 +62,13 @@ class Developer(models.Model):
     def __str__(self):
         return self.name
 
+
 # Услуги кратко на главную страницу
 class Service(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(upload_to='services/', verbose_name="Изображение")
     url = models.URLField(verbose_name="Ссылка на страницу услуги")
-
 
     def __str__(self):
         return self.title
@@ -83,7 +87,8 @@ class Service(models.Model):
             # Проверяем, необходимо ли изменять размер
             if pil_image.width > 290 or pil_image.height > 200:
                 output_size = (290, 200)
-                pil_image = pil_image.resize(output_size, Image.Resampling.LANCZOS)
+                pil_image = pil_image.resize(output_size, Image.LANCZOS)
+
 
                 # Сохранение измененного изображения
                 temp_file = BytesIO()
@@ -93,6 +98,7 @@ class Service(models.Model):
                 self.image.save(self.image.name, ContentFile(temp_file.read()), save=False)
                 temp_file.close()
 
+
 class FAQ(models.Model):
     question = models.CharField(max_length=255)
     answer = models.TextField()
@@ -101,8 +107,7 @@ class FAQ(models.Model):
         return self.question
 
 
-
-
+# Проекты портфолио
 class PortfolioProject(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -135,13 +140,28 @@ class PortfolioProject(models.Model):
             # Сохраняем модель с обновленным изображением
             super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.title
 
-def __str__(self):
-    return self.title
 
+# Сообщения контактов
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.subject}"
+
+
+# Отзывы
+class Review(models.Model):
+    name = models.CharField(max_length=100)  # Имя пользователя
+    profession = models.CharField(max_length=100)  # Профессия пользователя
+    message = models.TextField()  # Сообщение
+    stars = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # Количество звезд от 1 до 5
+
+    def __str__(self):
+        return f"{self.name} - {self.stars} stars"
