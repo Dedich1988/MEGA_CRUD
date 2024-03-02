@@ -10,7 +10,7 @@ class MyModelAdmin(admin.ModelAdmin):
         models.TextField: {'widget': CKEditorUploadingWidget},
     }
 
-
+admin.site.register(Review, MyModelAdmin)
 
 admin.site.register(PortfolioProject, MyModelAdmin)
 

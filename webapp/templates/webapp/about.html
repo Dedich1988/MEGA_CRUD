@@ -132,50 +132,31 @@
                         ligula eget dolorenean massa.</p>
                 </div>
             </div>
+            {% for star in review %}
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="clients-outer-box  position-relative" data-aos="fade-up">
                         <figure class="clients-outer-box-figure"><img
-                                src="{% static 'webapp/assets/images/client-section-img1.png' %}" alt=""></figure>
+                                src="{{star.image.url}}" alt=""></figure>
                         <figure class="position-absolute icon-figure-quotes"><img
                                 src="{% static 'webapp/assets/images/quotes-icon.png' %}" alt=""></figure>
                         <div class="clients-right-content" data-aos="fade-up">
-                            <span class="spencer-span">Spencer Simpson</span>
-                            <span class="ceo-p">CEO - Company</span>
+                            <span class="spencer-span">{{ star.name }}</span>
+                            <span class="ceo-p">{{ star.profession}}</span>
                         </div>
-                        <p class="clients-sectionp2">Lorem ipsum dolor sit amet consectetuer adipiscing elitenea ncom
-                            modo ligula eget dolor aenean massa cum sociis nato que penatibus etmagnis dis parturient
-                            montes </p>
+                        <p class="clients-sectionp2"> {{ star.message }}  </p>
                         <ul class="list-unstyled">
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
+
+                                <li><i class="fa-solid fa-star"></i></li>
+
                         </ul>
+
+
+
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="clients-outer-box  position-relative" data-aos="fade-up">
-                        <figure class="clients-outer-box-figure"><img
-                                src="{% static 'webapp/assets/images/client-section-img2.png' %}" alt=""></figure>
-                        <figure class="position-absolute icon-figure-quotes"><img
-                                src="{% static 'webapp/assets/images/quotes-icon.png' %}" alt=""></figure>
-                        <div class="clients-right-content" data-aos="fade-up">
-                            <span class="spencer-span">Spencer Simpson</span>
-                            <span class="ceo-p">CEO - Company</span>
-                        </div>
-                        <p class="clients-sectionp2">Lorem ipsum dolor sit amet consectetuer adipiscing elitenea ncom
-                            modo ligula eget dolor aenean massa cum sociis nato que penatibus etmagnis dis parturient
-                            montes </p>
-                        <ul class="list-unstyled">
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                            <li><i class="fa-solid fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
+            {% endfor %}
+
 
             </div>
             <div class="clients-section-btn">

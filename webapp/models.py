@@ -89,7 +89,6 @@ class Service(models.Model):
                 output_size = (290, 200)
                 pil_image = pil_image.resize(output_size, Image.LANCZOS)
 
-
                 # Сохранение измененного изображения
                 temp_file = BytesIO()
                 pil_image.save(temp_file, format='JPEG')
@@ -160,8 +159,22 @@ class ContactMessage(models.Model):
 class Review(models.Model):
     name = models.CharField(max_length=100)  # Имя пользователя
     profession = models.CharField(max_length=100)  # Профессия пользователя
-    message = models.TextField()  # Сообщение
+    message = models.CharField(max_length=100)  # Сообщение
     stars = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # Количество звезд от 1 до 5
+    image = models.ImageField(upload_to='review_images/', null=True, blank=True)  # Поле для изображения
 
     def __str__(self):
         return f"{self.name} - {self.stars} stars"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сначала сохраняем модель
+
+        if self.image:
+            # Открываем изображение с помощью PIL
+            img = Image.open(self.image.path)
+
+            # Подгоняем изображение под размер 100x100
+            img_resized = img.resize((100, 100), Image.LANCZOS)
+
+            # Перезаписываем изображение
+            img_resized.save(self.image.path)
