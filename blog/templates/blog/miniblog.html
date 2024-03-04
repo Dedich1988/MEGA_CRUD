@@ -1,59 +1,63 @@
 {% load static %}
-  <!-- BLOG SECTION -->
-  <section class="blog-posts overflow-hidden">
+<!-- BLOG SECTION -->
+<section class="blog-posts overflow-hidden">
     <div class="container">
-      <div class="row wow fadeInUp" style="visibility: visible; animation-name: fadeInUp">
-        <div id="blog" class="three-column col-xl-12" data-aos="fade-up">
-          <div class="row">
-              {% for post in latest_posts %}
-                  <div class="col-xl-4 col-lg-4">
-                      <div class="float-left w-100 post-item border mb-4">
-                          <div class="post-item-wrap position-relative">
-                              {% if post.media_type == "IMG" %}
-                                  <div class="post-image">
-                                      <a href="#">
-                                          <img alt="" src="{{ post.image.url }}"/>
-                                      </a>
-                                      <span class="post-meta-category">
-                      <a href="">{{ post.category | safe | truncatechars:178 }}</a>
-
+        <div class="row wow fadeInUp" style="visibility: visible; animation-name: fadeInUp">
+            <div id="blog" class="three-column col-xl-12" data-aos="fade-up">
+                <div class="row">
+                    {% for post in latest_posts %}
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="float-left w-100 post-item border mb-4">
+                                <div class="post-item-wrap position-relative">
+                                    {% if post.media_type == "IMG" %}
+                                        <div class="post-image">
+                                            <a href="#">
+                                                <img alt="" src="{{ post.image.url }}"/>
+                                            </a>
+                                            <span class="post-meta-category">
+                            <a href="">{{ post.category | safe | truncatechars:178 }}</a>
+                        </span>
+                                        </div>
+                                    {% elif post.media_type == "YTV" %}
+                                        <div class="post-video">
+                                            <div class="video-container">
+                                                <iframe class="video-iframe" src="{{ post.video_url }}"></iframe>
+                                            </div>
+                                            <span class="post-meta-category"><a href="">{{ post.category }}</a></span>
+                                        </div>
+                                    {% elif post.media_type == "AUD" %}
+                                        <div class="post-audio position-relative">
+                                            <a href="#">
+                                                <img alt="" src="{{ post.image.url }}"/>
+                                            </a>
+                                            <span class="post-meta-category">
+                            <a href="">{{ post.category }}</a>
+                        </span>
+                                            <audio class="position-absolute" controls="">
+                                                <source src="horse.ogg" type="audio/ogg"/>
+                                                <source src="{{ post.audio_file.url }}" type="audio/mpeg"/>
+                                            </audio>
+                                        </div>
+                                    {% endif %}
+                                    <div class="post-item-description">
+                                        <span class="post-meta-date">{{ post.post_date }}</span>
+                                        <span class="post-meta-comments">
+                        <a href="">{{ post.comments_count }}</a>
                     </span>
-                                  </div>
-                              {% elif post.media_type == "YTV" %}
-                                  <div class="post-video">
-                                      <div class="video-container">
-                                          <iframe class="video-iframe" src="{{ post.video_url }}"></iframe>
-                                      </div>
-                                      <span class="post-meta-category"><a href="">{{ post.category }}</a></span>
-                                      <!--post-video-->
-                                  </div>
-                              {% endif %}
+                                        <h2>
+                                            <a href="#">{{ post.title }}</a>
+                                        </h2>
+                                        <p>
+                                            {{ post.content|safe|truncatechars:172 }}
+                                        </p>
+                                        <a href="{{ post.read_more }}" class="item-link text-decoration-none">Read More
+                                            <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 
-
-
-
-                  <div class="post-item-description">
-                    <span class="post-meta-date"> {{ post.post_date}} </span>
-                    <span class="post-meta-comments">
-                      <a href=""> {{ post.comments_count}} </a>
-                    </span>
-                    <h2>
-                      <a href="#">{{ post.title}} </a>
-                    </h2>
-                    <p>
-                        {{ post.content| safe | truncatechars:172}}
-                    </p>
-                    <a href="{{ post.read_more }}" class="item-link text-decoration-none">Read More <i
-                        class="fa fa-arrow-right"></i></a>
-                    <!--post-item-description-->
-                  </div>
-                  <!--post-item-wrap-->
-                </div>
-                <!--post-item-->
-              </div>
-              <!--col-->
-            </div>
-              {% endfor %}
 {#            <div class="col-xl-4 col-lg-4">#}
 {#              <div class="float-left w-100 post-item border mb-4">#}
 {#                <div class="post-item-wrap position-relative">#}
@@ -243,5 +247,5 @@
         </div>
         <!--row-->
       </div>
-    </div>
+      </div>
   </section>
