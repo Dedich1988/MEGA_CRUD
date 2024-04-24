@@ -1,14 +1,21 @@
 from django.contrib import admin
-from ckeditor.widgets import CKEditorWidget
-from django import forms
+
 from .models import *
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.db import models
 
+
 class MyModelAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorUploadingWidget},
+
     }
+    ordering = 'pk', # Фильтры для админки
+    search_fields = 'pk','title' # Настройка поиска под каждую модель нужно смотреть поля
+
+@admin.register(ContactMessage) # Отоброжение контактной формы в административной панели
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = "name", "subject", "email"
 
 admin.site.register(Review, MyModelAdmin)
 
