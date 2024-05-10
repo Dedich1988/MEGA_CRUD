@@ -14,4 +14,11 @@ urlpatterns = [
     path('four_column/', four_column, name='four_column'),
     path('six_column_full_width/', six_column_full_width, name='six_column_full_width'),
     # Добавьте остальные пути здесь
+
+    #CRUD постов блога
+    path('', post_list, name='post_list'),  # Список всех постов
+    path('post/<int:pk>/', post_detail, name='post_detail'),  # Детали отдельного поста
+    # path('post/new/', views.post_create, name='post_create'),  # Создание нового поста
+    # path('post/<int:pk>/edit/', views.post_update, name='post_update'),  # Обновление поста
+    # path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),  # Удаление поста
 ]
