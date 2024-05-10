@@ -4,15 +4,17 @@
         <div class="col-xl-4 col-lg-4">
             <div class="float-left w-100 post-item border mb-4">
                 <div class="post-item-wrap position-relative">
+                    {% if post.media_type == "IMG" %}
                     <div class="post-image">
                         <a href="#">
-                            <img alt="" src="{% static 'blog/assets/images/standard_post_img01.jpg' %}"/>
+                            <img alt="" src="{{ post.image.url }}"/>
                         </a>
                         <span class="post-meta-category">
-                        <a href="">Lifestyle</a>
+                        <a href="">{{ post.category | safe | truncatechars:178 }}</a>
                       </span>
                         <!--post-image-->
                     </div>
+                    {% endif %}
                     <div class="post-item-description">
                         <span class="post-meta-date"> Jan 21, 2017 </span>
                         <span class="post-meta-comments">

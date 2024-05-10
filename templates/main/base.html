@@ -107,57 +107,63 @@
                                                             class="dropdown-item nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
                                                             href="{% url 'webapp:team' %}">Наша команда</a></li>
 
+
                                                 </ul>
                                             </div>
+                                        </li>
+                                        <li {% if request.resolver_match.url_name == 'post_list' %}
+                                            class="nav-item active" {% endif %}>
+                                            <a class="nav-link text-decoration-none navbar-text-color"
+                                               href="{% url 'blog:post_list' %}">Новости</a>
                                         </li>
 
-                                        <li class="nav-item dropdown redlight-dropdown {% if request.resolver_match.url_name in blog_urls %}active{% endif %}">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
-                                               role="button" data-toggle="dropdown" aria-haspopup="true"
-                                               aria-expanded="false">Blogs</a>
-                                            <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">
-                                                <ul class="list-unstyled">
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:single_post' %}active{% endif %}"
-                                                           href="{% url 'blog:single_post' %}">Single Post</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:infinite_scroll' %}active{% endif %}"
-                                                           href="{% url 'blog:infinite_scroll' %}">Infinite Scroll</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:load_more' %}active{% endif %}"
-                                                           href="{% url 'blog:load_more' %}">Load More</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:one_column' %}active{% endif %}"
-                                                           href="{% url 'blog:one_column' %}">One Column</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:two_column' %}active{% endif %}"
-                                                           href="{% url 'blog:two_column' %}">Two Column</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:three_column' %}active{% endif %}"
-                                                           href="{% url 'blog:three_column' %}">Three Column</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:three_column_sidebar' %}active{% endif %}"
-                                                           href="{% url 'blog:three_column_sidebar' %}">Three Column
-                                                            Sidebar</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:four_column' %}active{% endif %}"
-                                                           href="{% url 'blog:four_column' %}">Four Column</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:six_column_full_width' %}active{% endif %}"
-                                                           href="{% url 'blog:six_column_full_width' %}">Six Column Full
-                                                            Width</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+{#                                        <li class="nav-item dropdown redlight-dropdown {% if request.resolver_match.url_name in blog_urls %}active{% endif %}">#}
+{#                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"#}
+{#                                               role="button" data-toggle="dropdown" aria-haspopup="true"#}
+{#                                               aria-expanded="false">Blogs</a>#}
+{#                                            <div class="dropdown-menu dropdown-content-redlight blogs-section-drop-down">#}
+{#                                                <ul class="list-unstyled">#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:single_post' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:single_post' %}">Single Post</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:infinite_scroll' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:infinite_scroll' %}">Infinite Scroll</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:load_more' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:load_more' %}">Load More</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:one_column' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:one_column' %}">One Column</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:two_column' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:two_column' %}">Two Column</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:three_column' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:three_column' %}">Three Column</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:three_column_sidebar' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:three_column_sidebar' %}">Three Column#}
+{#                                                            Sidebar</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:four_column' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:four_column' %}">Four Column</a>#}
+{#                                                    </li>#}
+{#                                                    <li class="nav-item">#}
+{#                                                        <a class="dropdown-item fierce-menu nav-link {% if request.resolver_match.url_name == 'blog:six_column_full_width' %}active{% endif %}"#}
+{#                                                           href="{% url 'blog:six_column_full_width' %}">Six Column Full#}
+{#                                                            Width</a>#}
+{#                                                    </li>#}
+{#                                                </ul>#}
+{#                                            </div>#}
+{#                                        </li>#}
 
 
                                         <li class="nav-item navbar-text-color {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}">
