@@ -46,6 +46,7 @@ def six_column_full_width(request):
 
 def post_list(request):
     posts = BlogPost.objects.all()
+
     return render(request, 'blog/three-colum-sidbar.html', {'posts': posts})
 
 

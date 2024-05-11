@@ -1,43 +1,45 @@
 {% load static %}
 <div id="blog" class="three-column col-xl-12" data-aos="fade-up">
     <div class="row">
-        <div class="col-xl-4 col-lg-4">
-            <div class="float-left w-100 post-item border mb-4">
-                <div class="post-item-wrap position-relative">
-                    {% if post.media_type == "IMG" %}
-                    <div class="post-image">
-                        <a href="#">
-                            <img alt="" src="{{ post.image.url }}"/>
-                        </a>
-                        <span class="post-meta-category">
+        {% for post in posts %}
+            <div class="col-xl-4 col-lg-4">
+                <div class="float-left w-100 post-item border mb-4">
+                    <div class="post-item-wrap position-relative">
+                        {% if post.media_type == "IMG" %}
+                            <div class="post-image">
+                                <a href="#">
+                                    <img alt="" src="{{ post.image.url }}"/>
+                                </a>
+                                <span class="post-meta-category">
                         <a href="">{{ post.category | safe | truncatechars:178 }}</a>
                       </span>
-                        <!--post-image-->
-                    </div>
-                    {% endif %}
-                    <div class="post-item-description">
-                        <span class="post-meta-date"> Jan 21, 2017 </span>
-                        <span class="post-meta-comments">
+                                <!--post-image-->
+                            </div>
+                        {% endif %}
+                        <div class="post-item-description">
+                            <span class="post-meta-date"> Jan 21, 2017 </span>
+                            <span class="post-meta-comments">
                         <a href=""> 33 Comments </a>
                       </span>
-                        <h2>
-                            <a href="#">Standard post with a single image </a>
-                        </h2>
-                        <p>
-                            Curabitur pulvinar euismod ante, ac sagittis ante
-                            posuere ac. Vivamus luctus commodo dolor porta
-                            feugiat.
-                        </p>
-                        <a href="single-post.html" class="item-link text-decoration-none">Read More <i
-                                class="fa fa-arrow-right"></i></a>
-                        <!--post-item-description-->
+                            <h2>
+                                <a href="#">Standard post with a single image </a>
+                            </h2>
+                            <p>
+                                Curabitur pulvinar euismod ante, ac sagittis ante
+                                posuere ac. Vivamus luctus commodo dolor porta
+                                feugiat.
+                            </p>
+                            <a href="single-post.html" class="item-link text-decoration-none">Read More <i
+                                    class="fa fa-arrow-right"></i></a>
+                            <!--post-item-description-->
+                        </div>
+                        <!--post-item-wrap-->
                     </div>
-                    <!--post-item-wrap-->
+                    <!--post-item-->
                 </div>
-                <!--post-item-->
+                <!--col-->
             </div>
-            <!--col-->
-        </div>
+        {% endfor %}
         <div class="col-xl-4 col-lg-4">
             <div class="float-left w-100 post-item border mb-4">
                 <div class="post-item-wrap position-relative">
