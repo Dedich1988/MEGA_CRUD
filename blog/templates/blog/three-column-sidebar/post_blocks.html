@@ -15,6 +15,28 @@
                       </span>
                                 <!--post-image-->
                             </div>
+                        {% elif post.media_type == "YTV" %}
+                            <div class="post-video">
+                                <div class="video-container">
+                                    <iframe class="video-iframe" src="{{ post.video_url }}" frameborder="0"
+                                            allowfullscreen></iframe>
+                                </div>
+                                <span class="post-meta-category"><a href="">{{ post.category }}</a></span>
+                            </div>
+
+                        {% elif post.media_type == "AUD" %}
+                            <div class="post-audio position-relative">
+                                <a href="#">
+                                    <img alt="" src="{{ post.image.url }}"/>
+                                </a>
+                                <span class="post-meta-category">
+                                    <a href="">{{ post.category }}</a>
+                                </span>
+                                <audio class="position-absolute" controls="">
+                                    <source src="horse.ogg" type="audio/ogg"/>
+                                    <source src="{{ post.audio_file.url }}" type="audio/mpeg"/>
+                                </audio>
+                            </div>
                         {% endif %}
                         <div class="post-item-description">
                             <span class="post-meta-date"> Jan 21, 2017 </span>

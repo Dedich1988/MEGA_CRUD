@@ -765,10 +765,26 @@ a {
   padding-right: 0;
 }
 
-.video-iframe {
-    width: 338px; /* Установите здесь размер квадрата */
-    height: 252px; /* Установите здесь размер квадрата */
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 75%; /*  соотношение сторон */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
 }
+
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .video-container {
     position: relative;
     width: 338px;
