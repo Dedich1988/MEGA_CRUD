@@ -44,12 +44,10 @@
                         <a href=""> 33 Comments </a>
                       </span>
                             <h2>
-                                <a href="#">Standard post with a single image </a>
+                                <a href="#">{{ post.title }} </a>
                             </h2>
                             <p>
-                                Curabitur pulvinar euismod ante, ac sagittis ante
-                                posuere ac. Vivamus luctus commodo dolor porta
-                                feugiat.
+                                {{ post.content|safe|truncatechars:172 }}
                             </p>
                             <a href="single-post.html" class="item-link text-decoration-none">Read More <i
                                     class="fa fa-arrow-right"></i></a>
